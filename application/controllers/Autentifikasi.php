@@ -4,7 +4,7 @@ class Autentifikasi extends CI_Controller
 {
     public function index()
     {
-        //jika statusnya sudah login, maka tidak bisa mengakses halaman login alias dikembalikan ke tampilan user
+
         if ($this->session->userdata('email')) {
             redirect('user');
         }
@@ -14,17 +14,14 @@ class Autentifikasi extends CI_Controller
             'valid_email' => 'Email Salah!'
         ]);
 
-        $this->form_validation->set_rules('password', 'Password', 'required|trim', [
+        $this->form_validation->set_rules('password', 'password', 'required|trim', [
             'required' => 'Password Harus diisi'
         ]);
 
         if ($this->form_validation->run() == false) {
-            $data['judul'] = 'Login';
+            $data['judul'] = 'Sibershop | Login';
             $data['user'] = '';
-            //kata 'login' merupakan nilai dari variabel judul dalam array $data dikirimkan ke view aute_header
-            $this->load->view('templates/auth_header', $data);
-            $this->load->view('auth/login');
-            $this->load->view('templates/auth_footer');
+            $this->load->view('auth/login', $data);
         } else {
             $this->_login();
         }
@@ -38,11 +35,11 @@ class Autentifikasi extends CI_Controller
 
         $user = $this->ModelUser->cekData(['email' => $email])->row_array();
 
-        //jika usernya ada
+
         if ($user) {
-            //jika user sudah aktif
+
             if ($user['is_active'] == 1) {
-                //cek password
+
                 if (password_verify($password, $user['password'])) {
                     $data = [
                         'email' => $user['email'],
@@ -60,6 +57,7 @@ class Autentifikasi extends CI_Controller
                     }
                 } else {
                     $this->session->set_flashdata('pesan', '<div class="alert alert-danger alert message" role="alert">Password Salah!</div>');
+                    redirect('autentifikasi');
                 }
             } else {
                 $this->session->set_flashdata('pesan', '<div class="alert alert-danger alert message" role="alert">User belum diaktivasi</div>');
@@ -83,51 +81,78 @@ class Autentifikasi extends CI_Controller
         if ($this->session->userdata('email')) {
             redirect('user');
         }
-        //membuat rule untuk inputan nama agar tidak boleh kosong 
-        // dengan membuat pesan error dengan 
-        //bahasa sendiri yaitu 'Nama Belum diisi'
+
         $this->form_validation->set_rules(
-            'nama',
+            'name',
             'Nama Lengkap',
             'required',
-            ['required' => 'Nama Belum diis!!']
+            ['required' => 'Nama Belum diisi!']
         );
-        //membuat rule untuk inputan email agar tidak boleh kosong, tidak ada spasi, format email harus valid
-        //dan email belum pernah dipakai sama user lain dengan membuat pesan error dengan bahasa sendiri 
-        //yaitu jika format email tidak benar maka pesannya 'Email Tidak Benar!!'. jika email belum diisi,
-        //maka pesannya adalah 'Email Belum diisi', dan jika email yang diinput sudah dipakai user lain,
-        //maka pesannya 'Email Sudah dipakai'
-        $this->form_validation->set_rules('email', 'Alamat Email', 'required|trim|valid_email|is_unique[user.email]', ['valid_email' => 'Email Tidak Benar!!', 'required' => 'Email Belum diisi!!', 'is_unique' => 'Email Sudah Terdaftar!']);
-        //membuat rule untuk inputan password agar tidak boleh kosong, tidak ada spasi, tidak boleh kurang dari
-        //dari 3 digit, dan password harus sama dengan repeat password dengan membuat pesan error dengan 
-        //bahasa sendiri yaitu jika password dan repeat password tidak diinput sama, maka pesannya
-        //'Password Tidak Sama'. jika password diisi kurang dari 3 digit, maka pesannya adalah 
-        //'Password Terlalu Pendek'.
-        $this->form_validation->set_rules('password1', 'Password', 'required|trim|min_length[3]|matches[password2]', ['matches' => 'Password Tidak Sama!!', 'min_length' => 'Password Terlalu Pendek']);
-        $this->form_validation->set_rules('password2', 'Repeat Password', 'required|trim|matches[password1]', ['matches' => 'Password Tidak Sama!!']);
-        //jika jida disubmit kemudian validasi form diatas tidak berjalan, maka akan tetap berada di
-        //tampilan registrasi. tapi jika disubmit kemudian validasi form diatas berjalan, maka data yang 
-        //diinput akan disimpan ke dalam tabel user
+
+        $this->form_validation->set_rules(
+            'email',
+            'Alamat Email',
+            'required|trim|valid_email|is_unique[user.email]',
+            [
+                'valid_email' => 'Email Tidak Benar!!',
+                'required' => 'Email Belum diisi!!',
+                'is_unique' => 'Email Sudah Terdaftar!'
+            ]
+        );
+
+        $this->form_validation->set_rules(
+            'password1',
+            'Password',
+            'required|trim|min_length[3]|matches[password2]',
+            [
+                'required' => 'Kata sandi belum diisi',
+                'matches' => 'Kata sandi tidak sama!!',
+                'min_length' => 'Kata sandi terlalu pendek'
+            ]
+        );
+        $this->form_validation->set_rules(
+            'password2',
+            'Repeat Password',
+            'required|trim|matches[password1]',
+            ['matches' => 'Kata sandi tidak sama!!']
+        );
+
         if ($this->form_validation->run() == false) {
-            $data['judul'] = 'Registrasi Member';
-            $this->load->view('templates/auth_header', $data);
-            $this->load->view('auth/registrasi');
-            $this->load->view('templates/auth_footer');
+            $data['judul'] = 'Registrasi';
+            $this->load->view('auth/registrasi', $data);
         } else {
             $email = $this->input->post('email', true);
-            $data = ['nama' => htmlspecialchars($this->input->post('nama', true)), 'email' => htmlspecialchars($email), 'image' => 'default.jpg', 'password' => password_hash($this->input->post('password1'), PASSWORD_DEFAULT), 'role_id' => 2, 'is_active' => 1, 'tanggal_input' => time()];
+            $data = [
+                'nama' => htmlspecialchars($this->input->post('name', true)),
+                'email' => htmlspecialchars($email),
+                'image' => 'default.jpg',
+                'password' => password_hash($this->input->post('password1'), PASSWORD_DEFAULT), 'role_id' => 2,
+                'is_active' => 1,
+                'tanggal_input' => time()
+            ];
             $this->ModelUser->simpanData($data);
-            //menggunakan model
-            $this->session->set_flashdata('pesan', '<div class="alert alert-success alert-message" role="alert">Selamat!! akun member anda sudah dibuat. Silahkan Aktivasi Akun anda</div>');
+
+            $this->session->set_flashdata('pesan', '<div class="alert alert-success alert-message" role="alert">Selamat!! akun anda sudah dibuat. Silahkan Aktivasi Akun anda</div>');
             redirect('autentifikasi');
         }
     }
     public function logout()
     {
-        $this->session->unset_userdata('email');
-        $this->session->unset_userdata('role_id');
+        $check_session_in_cookie = $this->input->cookie('__ACTIVE_SESSION_DATA');
+        $check_session_in_session = $this->session->userdata('__ACTIVE_SESSION_DATA');
 
-        $this->session->set_flashdata('message', '<div class="alert aler-success" role="alert">Kamu telah Logout!');
-        redirect('autentifikasi');
+        if ($check_session_in_cookie) {
+            delete_cookie('__ACTIVE_SESSION_DATA');
+
+            $this->session->set_flashdata('login_flash', 'Berhasil logout!');
+        } else if ($check_session_in_session) {
+            $this->session->unset_userdata('__ACTIVE_SESSION_DATA');
+
+            $this->session->set_flashdata('login_flash', 'Berhasil logout!');
+        } else {
+            $this->session->set_flashdata('login_flash', 'Anda belum login!');
+        }
+
+        redirect('autentifikasi/');
     }
 }
