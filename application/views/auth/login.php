@@ -20,7 +20,7 @@
 
 </head>
 
-<body class="bg-gradient-primary">
+<body>
 
     <div class="container">
 
@@ -51,9 +51,6 @@
                                         </button>
                                     </form>
                                     <hr>
-                                    <!-- <div class="text-center">
-                                    <a class="small" href="forgot-password.html">Lupa Password?</a>
-                                </div> -->
                                     <div class="text-center">
                                         <a class="small" href="<?= base_url("autentifikasi/registrasi"); ?>">Buat Akun</a>
                                     </div>

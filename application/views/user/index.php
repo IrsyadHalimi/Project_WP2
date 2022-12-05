@@ -1,651 +1,511 @@
-<!-- ======= Hero Section ======= -->
-<section id="hero" class="d-flex align-items-center justify-content-center">
-    <div class="container" data-aos="fade-up">
+    <!-- HOME SECTION -->
 
-        <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="150">
-            <div class="col-xl-6 col-lg-8">
-                <h1>Powerful Digital Solutions With Gp<span>.</span></h1>
-                <h2>We are team of talented digital marketers</h2>
+    <section class="home-section" id="home-section">
+        <div class="home-section-content">
+            <div id="home-section-carousel" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#home-section-carousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#home-section-carousel" data-slide-to="1"></li>
+                    <li data-target="#home-section-carousel" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner">
+                    <!-- FIRST SLIDE -->
+                    <div class="carousel-item active">
+                        <img class="d-block w-100" src="Design/images/barbershop_image_1.jpg" alt="First slide">
+                        <div class="carousel-caption d-md-block">
+                            <h3>It's Not Just a Haircut, It's an Experience.</h3>
+                            <p>
+                                Our barbershop is the territory created purely for males who appreciate
+                                <br>
+                                premium quality, time and flawless look.
+                            </p>
+                        </div>
+                    </div>
+                    <!-- SECOND SLIDE -->
+                    <div class="carousel-item">
+                        <img class="d-block w-100" src="Design/images/barbershop_image_2.jpg" alt="Second slide">
+                        <div class="carousel-caption d-md-block">
+                            <h3>It's Not Just a Haircut, It's an Experience.</h3>
+                            <p>
+                                Our barbershop is the territory created purely for males who appreciate
+                                <br>
+                                premium quality, time and flawless look.
+                            </p>
+                        </div>
+                    </div>
+                    <!-- THIRD SLIDE -->
+                    <div class="carousel-item">
+                        <img class="d-block w-100" src="Design/images/barbershop_image_3.jpg" alt="Third slide">
+                        <div class="carousel-caption d-md-block">
+                            <h3>It's Not Just a Haircut, It's an Experience.</h3>
+                            <p>
+                                Our barbershop is the territory created purely for males who appreciate
+                                <br>
+                                premium quality, time and flawless look.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- PREVIOUS & NEXT -->
+                <a class="carousel-control-prev" href="#home-section-carousel" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#home-section-carousel" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
             </div>
         </div>
+    </section>
 
-        <div class="row gy-4 mt-5 justify-content-center" data-aos="zoom-in" data-aos-delay="250">
-            <div class="col-xl-2 col-md-4">
-                <div class="icon-box">
-                    <i class="ri-store-line"></i>
-                    <h3><a href="">Lorem Ipsum</a></h3>
-                </div>
-            </div>
-            <div class="col-xl-2 col-md-4">
-                <div class="icon-box">
-                    <i class="ri-bar-chart-box-line"></i>
-                    <h3><a href="">Dolor Sitema</a></h3>
-                </div>
-            </div>
-            <div class="col-xl-2 col-md-4">
-                <div class="icon-box">
-                    <i class="ri-calendar-todo-line"></i>
-                    <h3><a href="">Sedare Perspiciatis</a></h3>
-                </div>
-            </div>
-            <div class="col-xl-2 col-md-4">
-                <div class="icon-box">
-                    <i class="ri-paint-brush-line"></i>
-                    <h3><a href="">Magni Dolores</a></h3>
-                </div>
-            </div>
-            <div class="col-xl-2 col-md-4">
-                <div class="icon-box">
-                    <i class="ri-database-2-line"></i>
-                    <h3><a href="">Nemos Enimade</a></h3>
-                </div>
-            </div>
-        </div>
+    <!-- ABOUT SECTION -->
 
-    </div>
-</section><!-- End Hero -->
-
-<main id="main">
-
-    <!-- ======= About Section ======= -->
-    <section id="about" class="about">
-        <div class="container" data-aos="fade-up">
-
+    <section id="about" class="about_section">
+        <div class="container">
             <div class="row">
-                <div class="col-lg-6 order-1 order-lg-2" data-aos="fade-left" data-aos-delay="100">
-                    <img src="assets/img/about.jpg" class="img-fluid" alt="">
-                </div>
-                <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content" data-aos="fade-right" data-aos-delay="100">
-                    <h3>Voluptatem dignissimos provident quasi corporis voluptates sit assumenda.</h3>
-                    <p class="fst-italic">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                        magna aliqua.
-                    </p>
-                    <ul>
-                        <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
-                        <li><i class="ri-check-double-line"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
-                        <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</li>
-                    </ul>
-                    <p>
-                        Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-                        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident
-                    </p>
-                </div>
-            </div>
-
-        </div>
-    </section><!-- End About Section -->
-
-    <!-- ======= Clients Section ======= -->
-    <section id="clients" class="clients">
-        <div class="container" data-aos="zoom-in">
-
-            <div class="clients-slider swiper">
-                <div class="swiper-wrapper align-items-center">
-                    <div class="swiper-slide"><img src="assets/img/clients/client-1.png" class="img-fluid" alt=""></div>
-                    <div class="swiper-slide"><img src="assets/img/clients/client-2.png" class="img-fluid" alt=""></div>
-                    <div class="swiper-slide"><img src="assets/img/clients/client-3.png" class="img-fluid" alt=""></div>
-                    <div class="swiper-slide"><img src="assets/img/clients/client-4.png" class="img-fluid" alt=""></div>
-                    <div class="swiper-slide"><img src="assets/img/clients/client-5.png" class="img-fluid" alt=""></div>
-                    <div class="swiper-slide"><img src="assets/img/clients/client-6.png" class="img-fluid" alt=""></div>
-                    <div class="swiper-slide"><img src="assets/img/clients/client-7.png" class="img-fluid" alt=""></div>
-                    <div class="swiper-slide"><img src="assets/img/clients/client-8.png" class="img-fluid" alt=""></div>
-                </div>
-                <div class="swiper-pagination"></div>
-            </div>
-
-        </div>
-    </section><!-- End Clients Section -->
-
-    <!-- ======= Features Section ======= -->
-    <section id="features" class="features">
-        <div class="container" data-aos="fade-up">
-
-            <div class="row">
-                <div class="image col-lg-6" style='background-image: url("assets/img/features.jpg");' data-aos="fade-right"></div>
-                <div class="col-lg-6" data-aos="fade-left" data-aos-delay="100">
-                    <div class="icon-box mt-5 mt-lg-0" data-aos="zoom-in" data-aos-delay="150">
-                        <i class="bx bx-receipt"></i>
-                        <h4>Est labore ad</h4>
-                        <p>Consequuntur sunt aut quasi enim aliquam quae harum pariatur laboris nisi ut aliquip</p>
-                    </div>
-                    <div class="icon-box mt-5" data-aos="zoom-in" data-aos-delay="150">
-                        <i class="bx bx-cube-alt"></i>
-                        <h4>Harum esse qui</h4>
-                        <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt</p>
-                    </div>
-                    <div class="icon-box mt-5" data-aos="zoom-in" data-aos-delay="150">
-                        <i class="bx bx-images"></i>
-                        <h4>Aut occaecati</h4>
-                        <p>Aut suscipit aut cum nemo deleniti aut omnis. Doloribus ut maiores omnis facere</p>
-                    </div>
-                    <div class="icon-box mt-5" data-aos="zoom-in" data-aos-delay="150">
-                        <i class="bx bx-shield"></i>
-                        <h4>Beatae veritatis</h4>
-                        <p>Expedita veritatis consequuntur nihil tempore laudantium vitae denat pacta</p>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </section><!-- End Features Section -->
-
-    <!-- ======= Services Section ======= -->
-    <section id="services" class="services">
-        <div class="container" data-aos="fade-up">
-
-            <div class="section-title">
-                <h2>Services</h2>
-                <p>Check our Services</p>
-            </div>
-
-            <div class="row">
-                <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
-                    <div class="icon-box">
-                        <div class="icon"><i class="bx bxl-dribbble"></i></div>
-                        <h4><a href="">Lorem Ipsum</a></h4>
-                        <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="200">
-                    <div class="icon-box">
-                        <div class="icon"><i class="bx bx-file"></i></div>
-                        <h4><a href="">Sed ut perspiciatis</a></h4>
-                        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0" data-aos="zoom-in" data-aos-delay="300">
-                    <div class="icon-box">
-                        <div class="icon"><i class="bx bx-tachometer"></i></div>
-                        <h4><a href="">Magni Dolores</a></h4>
-                        <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="100">
-                    <div class="icon-box">
-                        <div class="icon"><i class="bx bx-world"></i></div>
-                        <h4><a href="">Nemo Enim</a></h4>
-                        <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="200">
-                    <div class="icon-box">
-                        <div class="icon"><i class="bx bx-slideshow"></i></div>
-                        <h4><a href="">Dele cardo</a></h4>
-                        <p>Quis consequatur saepe eligendi voluptatem consequatur dolor consequuntur</p>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="300">
-                    <div class="icon-box">
-                        <div class="icon"><i class="bx bx-arch"></i></div>
-                        <h4><a href="">Divera don</a></h4>
-                        <p>Modi nostrum vel laborum. Porro fugit error sit minus sapiente sit aspernatur</p>
-                    </div>
-                </div>
-
-            </div>
-
-        </div>
-    </section><!-- End Services Section -->
-
-    <!-- ======= Cta Section ======= -->
-    <section id="cta" class="cta">
-        <div class="container" data-aos="zoom-in">
-
-            <div class="text-center">
-                <h3>Call To Action</h3>
-                <p> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                <a class="cta-btn" href="#">Call To Action</a>
-            </div>
-
-        </div>
-    </section><!-- End Cta Section -->
-
-    <!-- ======= Portfolio Section ======= -->
-    <section id="portfolio" class="portfolio">
-        <div class="container" data-aos="fade-up">
-
-            <div class="section-title">
-                <h2>Portfolio</h2>
-                <p>Check our Portfolio</p>
-            </div>
-
-            <div class="row" data-aos="fade-up" data-aos-delay="100">
-                <div class="col-lg-12 d-flex justify-content-center">
-                    <ul id="portfolio-flters">
-                        <li data-filter="*" class="filter-active">All</li>
-                        <li data-filter=".filter-app">App</li>
-                        <li data-filter=".filter-card">Card</li>
-                        <li data-filter=".filter-web">Web</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
-
-                <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-                    <div class="portfolio-wrap">
-                        <img src="assets/img/portfolio/portfolio-1.jpg" class="img-fluid" alt="">
-                        <div class="portfolio-info">
-                            <h4>App 1</h4>
-                            <p>App</p>
-                            <div class="portfolio-links">
-                                <a href="assets/img/portfolio/portfolio-1.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 1"><i class="bx bx-plus"></i></a>
-                                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-                    <div class="portfolio-wrap">
-                        <img src="assets/img/portfolio/portfolio-2.jpg" class="img-fluid" alt="">
-                        <div class="portfolio-info">
-                            <h4>Web 3</h4>
-                            <p>Web</p>
-                            <div class="portfolio-links">
-                                <a href="assets/img/portfolio/portfolio-2.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 3"><i class="bx bx-plus"></i></a>
-                                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-                    <div class="portfolio-wrap">
-                        <img src="assets/img/portfolio/portfolio-3.jpg" class="img-fluid" alt="">
-                        <div class="portfolio-info">
-                            <h4>App 2</h4>
-                            <p>App</p>
-                            <div class="portfolio-links">
-                                <a href="assets/img/portfolio/portfolio-3.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 2"><i class="bx bx-plus"></i></a>
-                                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-                    <div class="portfolio-wrap">
-                        <img src="assets/img/portfolio/portfolio-4.jpg" class="img-fluid" alt="">
-                        <div class="portfolio-info">
-                            <h4>Card 2</h4>
-                            <p>Card</p>
-                            <div class="portfolio-links">
-                                <a href="assets/img/portfolio/portfolio-4.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Card 2"><i class="bx bx-plus"></i></a>
-                                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-                    <div class="portfolio-wrap">
-                        <img src="assets/img/portfolio/portfolio-5.jpg" class="img-fluid" alt="">
-                        <div class="portfolio-info">
-                            <h4>Web 2</h4>
-                            <p>Web</p>
-                            <div class="portfolio-links">
-                                <a href="assets/img/portfolio/portfolio-5.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 2"><i class="bx bx-plus"></i></a>
-                                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-                    <div class="portfolio-wrap">
-                        <img src="assets/img/portfolio/portfolio-6.jpg" class="img-fluid" alt="">
-                        <div class="portfolio-info">
-                            <h4>App 3</h4>
-                            <p>App</p>
-                            <div class="portfolio-links">
-                                <a href="assets/img/portfolio/portfolio-6.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 3"><i class="bx bx-plus"></i></a>
-                                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-                    <div class="portfolio-wrap">
-                        <img src="assets/img/portfolio/portfolio-7.jpg" class="img-fluid" alt="">
-                        <div class="portfolio-info">
-                            <h4>Card 1</h4>
-                            <p>Card</p>
-                            <div class="portfolio-links">
-                                <a href="assets/img/portfolio/portfolio-7.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Card 1"><i class="bx bx-plus"></i></a>
-                                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-                    <div class="portfolio-wrap">
-                        <img src="assets/img/portfolio/portfolio-8.jpg" class="img-fluid" alt="">
-                        <div class="portfolio-info">
-                            <h4>Card 3</h4>
-                            <p>Card</p>
-                            <div class="portfolio-links">
-                                <a href="assets/img/portfolio/portfolio-8.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Card 3"><i class="bx bx-plus"></i></a>
-                                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-                    <div class="portfolio-wrap">
-                        <img src="assets/img/portfolio/portfolio-9.jpg" class="img-fluid" alt="">
-                        <div class="portfolio-info">
-                            <h4>Web 3</h4>
-                            <p>Web</p>
-                            <div class="portfolio-links">
-                                <a href="assets/img/portfolio/portfolio-9.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 3"><i class="bx bx-plus"></i></a>
-                                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-        </div>
-    </section><!-- End Portfolio Section -->
-
-    <!-- ======= Counts Section ======= -->
-    <section id="counts" class="counts">
-        <div class="container" data-aos="fade-up">
-
-            <div class="row no-gutters">
-                <div class="image col-xl-5 d-flex align-items-stretch justify-content-center justify-content-lg-start" data-aos="fade-right" data-aos-delay="100"></div>
-                <div class="col-xl-7 ps-0 ps-lg-5 pe-lg-1 d-flex align-items-stretch" data-aos="fade-left" data-aos-delay="100">
-                    <div class="content d-flex flex-column justify-content-center">
-                        <h3>Voluptatem dignissimos provident quasi</h3>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit
+                <div class="col-md-6">
+                    <div class="about_content" style="text-align: center;">
+                        <h3>Introducing</h3>
+                        <h2>The Barber Shop <br>Science 1991</h2>
+                        <img src="Design/images/about-logo.png" alt="logo">
+                        <p style="color: #777">
+                            Barber is a person whose occupation is mainly to cut dress groom style and shave men's and boys' hair. A barber's place of work is known as a "barbershop" or a "barber's". Barbershops are also places of social interaction and public discourse. In some instances, barbershops are also public forums.
                         </p>
-                        <div class="row">
-                            <div class="col-md-6 d-md-flex align-items-md-stretch">
-                                <div class="count-box">
-                                    <i class="bi bi-emoji-smile"></i>
-                                    <span data-purecounter-start="0" data-purecounter-end="65" data-purecounter-duration="2" class="purecounter"></span>
-                                    <p><strong>Happy Clients</strong> consequuntur voluptas nostrum aliquid ipsam architecto ut.</p>
-                                </div>
-                            </div>
-
-                            <div class="col-md-6 d-md-flex align-items-md-stretch">
-                                <div class="count-box">
-                                    <i class="bi bi-journal-richtext"></i>
-                                    <span data-purecounter-start="0" data-purecounter-end="85" data-purecounter-duration="2" class="purecounter"></span>
-                                    <p><strong>Projects</strong> adipisci atque cum quia aspernatur totam laudantium et quia dere tan</p>
-                                </div>
-                            </div>
-
-                            <div class="col-md-6 d-md-flex align-items-md-stretch">
-                                <div class="count-box">
-                                    <i class="bi bi-clock"></i>
-                                    <span data-purecounter-start="0" data-purecounter-end="35" data-purecounter-duration="4" class="purecounter"></span>
-                                    <p><strong>Years of experience</strong> aut commodi quaerat modi aliquam nam ducimus aut voluptate non vel</p>
-                                </div>
-                            </div>
-
-                            <div class="col-md-6 d-md-flex align-items-md-stretch">
-                                <div class="count-box">
-                                    <i class="bi bi-award"></i>
-                                    <span data-purecounter-start="0" data-purecounter-end="20" data-purecounter-duration="4" class="purecounter"></span>
-                                    <p><strong>Awards</strong> rerum asperiores dolor alias quo reprehenderit eum et nemo pad der</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div><!-- End .content-->
+                        <a href="#" class="default_btn" style="opacity: 1;">More about us</a>
+                    </div>
+                </div>
+                <div class="col-md-6  d-none d-md-block">
+                    <div class="about_img" style="overflow:hidden">
+                        <img class="about_img_1" src="Design/images/about-1.jpg" alt="about-1">
+                        <img class="about_img_2" src="Design/images/about-2.jpg" alt="about-2">
+                        <img class="about_img_3" src="Design/images/about-3.jpg" alt="about-3">
+                    </div>
                 </div>
             </div>
-
         </div>
-    </section><!-- End Counts Section -->
+    </section>
 
-    <!-- ======= Testimonials Section ======= -->
-    <section id="testimonials" class="testimonials">
-        <div class="container" data-aos="zoom-in">
+    <!-- SERVICES SECTION -->
 
-            <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
-                <div class="swiper-wrapper">
-
-                    <div class="swiper-slide">
-                        <div class="testimonial-item">
-                            <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
-                            <h3>Saul Goodman</h3>
-                            <h4>Ceo &amp; Founder</h4>
-                            <p>
-                                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                                Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
-                                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                            </p>
-                        </div>
-                    </div><!-- End testimonial item -->
-
-                    <div class="swiper-slide">
-                        <div class="testimonial-item">
-                            <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
-                            <h3>Sara Wilsson</h3>
-                            <h4>Designer</h4>
-                            <p>
-                                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                                Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.
-                                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                            </p>
-                        </div>
-                    </div><!-- End testimonial item -->
-
-                    <div class="swiper-slide">
-                        <div class="testimonial-item">
-                            <img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
-                            <h3>Jena Karlis</h3>
-                            <h4>Store Owner</h4>
-                            <p>
-                                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                                Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.
-                                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                            </p>
-                        </div>
-                    </div><!-- End testimonial item -->
-
-                    <div class="swiper-slide">
-                        <div class="testimonial-item">
-                            <img src="assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
-                            <h3>Matt Brandon</h3>
-                            <h4>Freelancer</h4>
-                            <p>
-                                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                                Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.
-                                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                            </p>
-                        </div>
-                    </div><!-- End testimonial item -->
-
-                    <div class="swiper-slide">
-                        <div class="testimonial-item">
-                            <img src="assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
-                            <h3>John Larson</h3>
-                            <h4>Entrepreneur</h4>
-                            <p>
-                                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                                Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.
-                                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                            </p>
-                        </div>
-                    </div><!-- End testimonial item -->
-                </div>
-                <div class="swiper-pagination"></div>
+    <section class="services_section" id="services">
+        <div class="container">
+            <div class="section_heading">
+                <h3>Trendy Salon & Spa</h3>
+                <h2>Our Services</h2>
+                <div class="heading-line"></div>
             </div>
-
-        </div>
-    </section><!-- End Testimonials Section -->
-
-    <!-- ======= Team Section ======= -->
-    <section id="team" class="team">
-        <div class="container" data-aos="fade-up">
-
-            <div class="section-title">
-                <h2>Team</h2>
-                <p>Check our Team</p>
-            </div>
-
             <div class="row">
-
-                <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
-                    <div class="member" data-aos="fade-up" data-aos-delay="100">
-                        <div class="member-img">
-                            <img src="assets/img/team/team-1.jpg" class="img-fluid" alt="">
-                            <div class="social">
-                                <a href=""><i class="bi bi-twitter"></i></a>
-                                <a href=""><i class="bi bi-facebook"></i></a>
-                                <a href=""><i class="bi bi-instagram"></i></a>
-                                <a href=""><i class="bi bi-linkedin"></i></a>
-                            </div>
-                        </div>
-                        <div class="member-info">
-                            <h4>Walter White</h4>
-                            <span>Chief Executive Officer</span>
-                        </div>
+                <div class="col-lg-3 col-md-6 padd_col_res">
+                    <div class="service_box">
+                        <i class="bs bs-scissors-1"></i>
+                        <h3>Haircut Styles</h3>
+                        <p>Barber is a person whose occupation is mainly to cut dress style.</p>
                     </div>
                 </div>
-
-                <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
-                    <div class="member" data-aos="fade-up" data-aos-delay="200">
-                        <div class="member-img">
-                            <img src="assets/img/team/team-2.jpg" class="img-fluid" alt="">
-                            <div class="social">
-                                <a href=""><i class="bi bi-twitter"></i></a>
-                                <a href=""><i class="bi bi-facebook"></i></a>
-                                <a href=""><i class="bi bi-instagram"></i></a>
-                                <a href=""><i class="bi bi-linkedin"></i></a>
-                            </div>
-                        </div>
-                        <div class="member-info">
-                            <h4>Sarah Jhonson</h4>
-                            <span>Product Manager</span>
-                        </div>
+                <div class="col-lg-3 col-md-6 padd_col_res">
+                    <div class="service_box">
+                        <i class="bs bs-razor-2"></i>
+                        <h3>Beard Triming</h3>
+                        <p>Barber is a person whose occupation is mainly to cut dress style.</p>
                     </div>
                 </div>
-
-                <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
-                    <div class="member" data-aos="fade-up" data-aos-delay="300">
-                        <div class="member-img">
-                            <img src="assets/img/team/team-3.jpg" class="img-fluid" alt="">
-                            <div class="social">
-                                <a href=""><i class="bi bi-twitter"></i></a>
-                                <a href=""><i class="bi bi-facebook"></i></a>
-                                <a href=""><i class="bi bi-instagram"></i></a>
-                                <a href=""><i class="bi bi-linkedin"></i></a>
-                            </div>
-                        </div>
-                        <div class="member-info">
-                            <h4>William Anderson</h4>
-                            <span>CTO</span>
-                        </div>
+                <div class="col-lg-3 col-md-6 padd_col_res">
+                    <div class="service_box">
+                        <i class="bs bs-brush"></i>
+                        <h3>Smooth Shave</h3>
+                        <p>Barber is a person whose occupation is mainly to cut dress style.</p>
                     </div>
                 </div>
-
-                <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
-                    <div class="member" data-aos="fade-up" data-aos-delay="400">
-                        <div class="member-img">
-                            <img src="assets/img/team/team-4.jpg" class="img-fluid" alt="">
-                            <div class="social">
-                                <a href=""><i class="bi bi-twitter"></i></a>
-                                <a href=""><i class="bi bi-facebook"></i></a>
-                                <a href=""><i class="bi bi-instagram"></i></a>
-                                <a href=""><i class="bi bi-linkedin"></i></a>
-                            </div>
-                        </div>
-                        <div class="member-info">
-                            <h4>Amanda Jepson</h4>
-                            <span>Accountant</span>
-                        </div>
+                <div class="col-lg-3 col-md-6 padd_col_res">
+                    <div class="service_box">
+                        <i class="bs bs-hairbrush-1"></i>
+                        <h3>Face Masking</h3>
+                        <p>Barber is a person whose occupation is mainly to cut dress style.</p>
                     </div>
                 </div>
-
             </div>
-
         </div>
-    </section><!-- End Team Section -->
+    </section>
 
-    <!-- ======= Contact Section ======= -->
-    <section id="contact" class="contact">
-        <div class="container" data-aos="fade-up">
+    <!-- BOOKING SECTION -->
 
-            <div class="section-title">
-                <h2>Contact</h2>
-                <p>Contact Us</p>
-            </div>
-
-            <div>
-                <iframe style="border:0; width: 100%; height: 270px;" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621" frameborder="0" allowfullscreen></iframe>
-            </div>
-
-            <div class="row mt-5">
-
-                <div class="col-lg-4">
-                    <div class="info">
-                        <div class="address">
-                            <i class="bi bi-geo-alt"></i>
-                            <h4>Location:</h4>
-                            <p>A108 Adam Street, New York, NY 535022</p>
+    <section class="book_section" id="booking">
+        <div class="book_bg"></div>
+        <div class="map_pattern"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 offset-md-6">
+                    <form action="appointment.php" method="post" id="appointment_form" class="form-horizontal appointment_form">
+                        <div class="book_content">
+                            <h2 style="color: white;">Make an appointment</h2>
+                            <p style="color: #999;">
+                                Barber is a person whose occupation is mainly to cut dress groom <br>style and shave men's and boys hair.
+                            </p>
                         </div>
-
-                        <div class="email">
-                            <i class="bi bi-envelope"></i>
-                            <h4>Email:</h4>
-                            <p>info@example.com</p>
-                        </div>
-
-                        <div class="phone">
-                            <i class="bi bi-phone"></i>
-                            <h4>Call:</h4>
-                            <p>+1 5589 55488 55s</p>
-                        </div>
-
-                    </div>
-
-                </div>
-
-                <div class="col-lg-8 mt-5 mt-lg-0">
-
-                    <form action="forms/contact.php" method="post" role="form" class="php-email-form">
-                        <div class="row">
-                            <div class="col-md-6 form-group">
-                                <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+                        <div class="form-group row">
+                            <div class="col-md-6 padding-10">
+                                <input type="date" class="form-control">
                             </div>
-                            <div class="col-md-6 form-group mt-3 mt-md-0">
-                                <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+                            <div class="col-md-6 padding-10">
+                                <input type="time" class="form-control">
                             </div>
                         </div>
-                        <div class="form-group mt-3">
-                            <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
-                        </div>
-                        <div class="form-group mt-3">
-                            <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
-                        </div>
-                        <div class="my-3">
-                            <div class="loading">Loading</div>
-                            <div class="error-message"></div>
-                            <div class="sent-message">Your message has been sent. Thank you!</div>
-                        </div>
-                        <div class="text-center"><button type="submit">Send Message</button></div>
+
+                        <!-- SUBMIT BUTTON -->
+
+                        <button id="app_submit" class="default_btn" type="submit">
+                            Make Appointment
+                        </button>
                     </form>
-
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GALLERY SECTION -->
+
+    <section class="gallery-section" id="gallery">
+        <div class="section_heading">
+            <h3>Trendy Salon & Spa</h3>
+            <h2>Barbers Gallery</h2>
+            <div class="heading-line"></div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 gallery-column">
+                    <div style="height: 230px">
+                        <div class="gallery-img" style="background-image: url('Design/images/portfolio-1.jpg');"> </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 gallery-column">
+                    <div style="height: 230px">
+                        <div class="gallery-img" style="background-image: url('Design/images/portfolio-2.jpg');"></div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 gallery-column">
+                    <div style="height: 230px">
+                        <div class="gallery-img" style="background-image: url('Design/images/portfolio-3.jpg');"></div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 gallery-column">
+                    <div style="height: 230px">
+                        <div class="gallery-img" style="background-image: url('Design/images/portfolio-4.jpg');"></div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 gallery-column">
+                    <div style="height: 230px">
+                        <div class="gallery-img" style="background-image: url('Design/images/portfolio-5.jpg');"></div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 gallery-column">
+                    <div style="height: 230px">
+                        <div class="gallery-img" style="background-image: url('Design/images/portfolio-6.jpg');"></div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 gallery-column">
+                    <div style="height: 230px">
+                        <div class="gallery-img" style="background-image: url('Design/images/portfolio-7.jpg');"></div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 gallery-column">
+                    <div style="height: 230px">
+                        <div class="gallery-img" style="background-image: url('Design/images/portfolio-8.jpg');"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TEAM SECTION -->
+
+    <section id="team" class="team_section">
+        <div class="container">
+            <div class="section_heading ">
+                <h3>Trendy Salon & Spa</h3>
+                <h2>Our Barbers</h2>
+                <div class="heading-line"></div>
+            </div>
+            <ul class="team_members row">
+                <li class="col-lg-3 col-md-6 padd_col_res">
+                    <div class="team_member">
+                        <img src="Design/images/team-1.jpg" alt="Team Member">
+                    </div>
+                </li>
+                <li class="col-lg-3 col-md-6 padd_col_res">
+                    <div class="team_member">
+                        <img src="Design/images/team-2.jpg" alt="Team Member">
+                    </div>
+                </li>
+                <li class="col-lg-3 col-md-6 padd_col_res">
+                    <div class="team_member">
+                        <img src="Design/images/team-3.jpg" alt="Team Member">
+                    </div>
+                </li>
+                <li class="col-lg-3 col-md-6 padd_col_res">
+                    <div class="team_member">
+                        <img src="Design/images/team-4.jpg" alt="Team Member">
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- REVIEWS SECTION -->
+
+    <section id="reviews" class="testimonial_section">
+        <div class="container">
+            <div id="reviews-carousel" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#reviews-carousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#reviews-carousel" data-slide-to="1"></li>
+                    <li data-target="#reviews-carousel" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner">
+                    <!-- REVIEW 1 -->
+                    <div class="carousel-item active">
+                        <img class="d-block w-100" src="Design/images/barbershop_image_1.jpg" alt="First slide" style="visibility: hidden;">
+                        <div class="carousel-caption d-md-block">
+                            <h3>Its Not Just a Haircut, Its an Experience.</h3>
+                            <p>
+                                Our barbershop is the territory created purely for males who appreciate
+                                <br>
+                                premium quality, time and flawless look.
+                            </p>
+                        </div>
+                    </div>
+                    <!-- REVIEW 2 -->
+                    <div class="carousel-item">
+                        <img class="d-block w-100" src="Design/images/barbershop_image_1.jpg" alt="First slide" style="visibility: hidden;">
+                        <div class="carousel-caption d-md-block">
+                            <h3>Its Not Just a Haircut, Its an Experience.</h3>
+                            <p>
+                                Our barbershop is the territory created purely for males who appreciate
+                                <br>
+                                premium quality, time and flawless look.
+                            </p>
+                        </div>
+                    </div>
+                    <!-- REVIEW 3 -->
+                    <div class="carousel-item">
+                        <img class="d-block w-100" src="Design/images/barbershop_image_1.jpg" alt="First slide" style="visibility: hidden;">
+                        <div class="carousel-caption d-md-block">
+                            <h3>Its Not Just a Haircut, Its an Experience.</h3>
+                            <p>
+                                Our barbershop is the territory created purely for males who appreciate
+                                <br>
+                                premium quality, time and flawless look.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- PREVIOUS & NEXT -->
+                <a class="carousel-control-prev" href="#reviews-carousel" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#reviews-carousel" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRICING SECTION  -->
+
+    <section class="pricing_section" id="pricing">
+
+        <!-- START GET CATEGORIES  PRICES FROM DATABASE -->
+
+        <?php
+
+        $stmt = $con->prepare("Select * from service_categories");
+        $stmt->execute();
+        $categories = $stmt->fetchAll();
+
+        ?>
+
+        <!-- END -->
+
+        <div class="container">
+            <div class="section_heading">
+                <h3>Save 20% On Beauty Spa</h3>
+                <h2>Our Barber Pricing</h2>
+                <div class="heading-line"></div>
+            </div>
+            <div class="row">
+                <?php
+
+                foreach ($categories as $category) {
+                    $stmt = $con->prepare("Select * from services where category_id = ?");
+                    $stmt->execute(array($category['category_id']));
+                    $totalServices =  $stmt->rowCount();
+                    $services = $stmt->fetchAll();
+
+                    if ($totalServices > 0) {
+                ?>
+
+                        <div class="col-lg-4 col-md-6 sm-padding">
+                            <div class="price_wrap">
+                                <h3><?php echo $category['category_name'] ?></h3>
+                                <ul class="price_list">
+                                    <?php
+
+                                    foreach ($services as $service) {
+                                    ?>
+
+                                        <li>
+                                            <h4><?php echo $service['service_name'] ?></h4>
+                                            <p><?php echo $service['service_description'] ?></p>
+                                            <span class="price">$<?php echo $service['service_price'] ?></span>
+                                        </li>
+
+                                    <?php
+                                    }
+
+                                    ?>
+
+                                </ul>
+                            </div>
+                        </div>
+
+                <?php
+                    }
+                }
+
+                ?>
 
             </div>
-
         </div>
-    </section><!-- End Contact Section -->
+    </section>
 
-</main><!-- End #main -->
+    <!-- CONTACT SECTION -->
+
+    <section class="contact-section" id="contact-us">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 sm-padding">
+                    <div class="contact-info">
+                        <h2>
+                            Get in touch with us &
+                            <br>send us message today!
+                        </h2>
+                        <p>
+                            Saasbiz is a different kind of architecture practice. Founded by LoganCee in 1991, we’re an employee-owned firm pursuing a democratic design process that values everyone’s input.
+                        </p>
+                        <h3>
+                            198 West 21th Street, Suite 721
+                            <br>
+                            New York, NY 10010
+                        </h3>
+                        <h4>
+                            <span style="font-weight: bold">Email:</span>
+                            Dynamiclayers.Net
+                            <br>
+                            <span style="font-weight: bold">Phone:</span>
+                            +88 (0) 101 0000 000
+                            <br>
+                            <span style="font-weight: bold">Fax:</span>
+                            +88 (0) 202 0000 001
+                        </h4>
+                    </div>
+                </div>
+                <div class="col-lg-6 sm-padding">
+                    <div class="contact-form">
+                        <div id="contact_ajax_form" class="contactForm">
+                            <div class="form-group colum-row row">
+                                <div class="col-sm-6">
+                                    <input type="text" id="contact_name" name="name" class="form-control" placeholder="Name">
+                                </div>
+                                <div class="col-sm-6">
+                                    <input type="email" id="contact_email" name="email" class="form-control" placeholder="Email">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-md-12">
+                                    <input type="text" id="contact_subject" name="subject" class="form-control" placeholder="Subject">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-md-12">
+                                    <textarea id="contact_message" name="message" cols="30" rows="5" class="form-control message" placeholder="Message"></textarea>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-md-12">
+                                    <button id="contact_send" class="default_btn">Send Message</button>
+                                </div>
+                            </div>
+                            <img src="Design/images/ajax_loader_gif.gif" id="contact_ajax_loader" style="display: none">
+                            <div id="contact_status_message"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WIDGET SECTION / FOOTER -->
+
+    <section class="widget_section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer_widget">
+                        <img src="Design/images/barbershop_logo.png" alt="Brand">
+                        <p>
+                            Our barbershop is the created for men who appreciate premium quality, time and flawless look.
+                        </p>
+                        <ul class="widget_social">
+                            <li><a href="#" data-toggle="tooltip" title="Facebook"><i class="fab fa-facebook-f fa-2x"></i></a></li>
+                            <li><a href="#" data-toggle="tooltip" title="Twitter"><i class="fab fa-twitter fa-2x"></i></a></li>
+                            <li><a href="#" data-toggle="tooltip" title="Instagram"><i class="fab fa-instagram fa-2x"></i></a></li>
+                            <li><a href="#" data-toggle="tooltip" title="LinkedIn"><i class="fab fa-linkedin fa-2x"></i></a></li>
+                            <li><a href="#" data-toggle="tooltip" title="Google+"><i class="fab fa-google-plus-g fa-2x"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer_widget">
+                        <h3>Headquarters</h3>
+                        <p>
+                            962 Fifth Avenue, 3rd Floor New York, NY10022
+                        </p>
+                        <p>
+                            contact@barbershop.com
+                            <br>
+                            (+123) 456 789 101
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer_widget">
+                        <h3>
+                            Opening Hours
+                        </h3>
+                        <ul class="opening_time">
+                            <li>Monday - Friday 11:30am - 2:008pm</li>
+                            <li>Monday - Friday 11:30am - 2:008pm</li>
+                            <li>Monday - Friday 11:30am - 2:008pm</li>
+                            <li>Monday - Friday 11:30am - 2:008pm</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer_widget">
+                        <h3>Subscribe to our contents</h3>
+                        <div class="subscribe_form">
+                            <form action="#" class="subscribe_form" novalidate="true">
+                                <input type="email" name="EMAIL" id="subs-email" class="form_input" placeholder="Email Address...">
+                                <button type="submit" class="submit">SUBSCRIBE</button>
+                                <div class="clearfix"></div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER  -->

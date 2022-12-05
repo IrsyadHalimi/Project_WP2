@@ -10,7 +10,7 @@ class Autentifikasi extends CI_Controller
         }
 
         $this->form_validation->set_rules('email', 'Alamat Email', 'required|trim|valid_email', [
-            'required' => 'Email Harus diisi!!',
+            'required'  => 'Email Harus diisi!!',
             'valid_email' => 'Email Salah!'
         ]);
 

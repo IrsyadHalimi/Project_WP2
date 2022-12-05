@@ -7,11 +7,75 @@
                 <h1 class="page-header">Administrator Sibershop</h1>
             </div>
         </div>
+        <!-- /.row -->
+        <div class="row">
+            <div class="col-lg-3 col-md-6">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-3">
+                                <i class="fa fa-smile-o fa-5x"></i>
+                            </div>
+                            <div class="col-xs-9 text-right">
+                                <div>Jumlah Klien</div>
+                                <div class="huge">26</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="panel panel-green">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-3">
+                                <i class="fa fa-scissors fa-5x"></i>
+                            </div>
+                            <div class="col-xs-9 text-right">
+                                <div>Jumlah Layanan</div>
+                                <div class="huge">9</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="panel panel-yellow">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-3">
+                                <i class="fa fa-users fa-5x"></i>
+                            </div>
+                            <div class="col-xs-9 text-right">
+                                <div>Jumlah Karyawan</div>
+                                <div class="huge">3</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="panel panel-red">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-3">
+                                <i class="fa fa-male fa-5x"></i>
+                            </div>
+                            <div class="col-xs-9 text-right">
+                                <div>Jumlah Antrian</div>
+                                <div class="huge">26</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /.row -->
         <div class="row">
             <div class="col-lg-8">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        Antrian Pangkas Rambut
+                        Antrian Selanjutnya
                     </div>
                     <!-- /.panel-heading -->
                     <div class="panel-body">
@@ -19,35 +83,27 @@
                             <table class="table table-striped">
                                 <thead>
                                     <tr>
-                                        <th>No antrian</th>
-                                        <th>Nama Pelanggan</th>
-                                        <th>E-mail</th>
-                                        <th>No Telepon</th>
+                                        <th>Waktu Mulai</th>
+                                        <th>Jenis Layanan</th>
+                                        <th>Perkiraan Waktu Selesai</th>
+                                        <th>Id Klien</th>
+                                        <th>Karyawan</th>
                                         <th> </th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>Mark</td>
-                                        <td>Otto</td>
-                                        <td>@mdo</td>
-                                        <td><button type="button" class="btn btn-info">Info</button> <button type="button" class="btn btn-danger">Delete</button></td>
-                                    </tr>
-                                    <tr>
-                                        <td>2</td>
-                                        <td>Jacob</td>
-                                        <td>Thornton</td>
-                                        <td>@fat</td>
-                                        <td><button type="button" class="btn btn-info">Info</button> <button type="button" class="btn btn-danger">Delete</button></td>
-                                    </tr>
-                                    <tr>
-                                        <td>3</td>
-                                        <td>Larry</td>
-                                        <td>the Bird</td>
-                                        <td>@twitter</td>
-                                        <td><button type="button" class="btn btn-info">Info</button> <button type="button" class="btn btn-danger">Delete</button></td>
-                                    </tr>
+                                    <?php
+                                    $no = 1;
+                                    foreach ($produk->result() as $p) {
+                                    ?>
+                                        <tr>
+                                            <td><?= $no++; ?></td>
+                                            <td><?= $p->nama_produk; ?></td>
+                                            <td><?= $p->sku; ?></td>
+                                            <td><?= $p->harga; ?></td>
+                                            <!-- <td><button type="button" class="btn btn-info" <?= anchor('produk/edit' . $p->$id); ?>>Info</button> <button type="button" class="btn btn-danger" <?= anchor('produk/hapus' . $p->$id); ?>>Delete</button></td> -->
+                                        </tr>
+                                    <?php } ?>
                                 </tbody>
                             </table>
                         </div>
@@ -69,35 +125,27 @@
                             <table class="table table-striped">
                                 <thead>
                                     <tr>
-                                        <th>ID Pesanan</th>
-                                        <th>Produk</th>
-                                        <th>Nama Pelanggan</th>
-                                        <th>No Telepon</th>
+                                        <th>No</th>
+                                        <th>Nama Produk</th>
+                                        <th>SKU</th>
+                                        <th>Harga</th>
                                         <th> </th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>Mark</td>
-                                        <td>Otto</td>
-                                        <td>@mdo</td>
-                                        <td><button type="button" class="btn btn-info">Info</button> <button type="button" class="btn btn-danger">Delete</button></td>
-                                    </tr>
-                                    <tr>
-                                        <td>2</td>
-                                        <td>Jacob</td>
-                                        <td>Thornton</td>
-                                        <td>@fat</td>
-                                        <td><button type="button" class="btn btn-info">Info</button> <button type="button" class="btn btn-danger">Delete</button></td>
-                                    </tr>
-                                    <tr>
-                                        <td>3</td>
-                                        <td>Larry</td>
-                                        <td>the Bird</td>
-                                        <td>@twitter</td>
-                                        <td><button type="button" class="btn btn-info">Info</button> <button type="button" class="btn btn-danger">Delete</button></td>
-                                    </tr>
+                                <tbody>
+                                    <?php
+                                    $no = 1;
+                                    foreach ($produk->result() as $p) {
+                                    ?>
+                                        <tr>
+                                            <td><?= $no++; ?></td>
+                                            <td><?= $p->nama_produk; ?></td>
+                                            <td><?= $p->sku; ?></td>
+                                            <td><?= $p->harga; ?></td>
+                                            <td><a href="<?= site_url('admin/hapusProduk/' . $p->id); ?>"><button type="button" class="btn btn-danger">Delete</button></a></td>
+                                        </tr>
+                                    <?php } ?>
                                 </tbody>
                             </table>
                         </div>
@@ -173,150 +221,30 @@
                             <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                                 <thead>
                                     <tr>
-                                        <th>Rendering engine</th>
-                                        <th>Browser</th>
-                                        <th>Platform(s)</th>
-                                        <th>Engine version</th>
-                                        <th>CSS grade</th>
+                                        <th>No</th>
+                                        <th>SKU</th>
+                                        <th>Nama Produk</th>
+                                        <th>Deskripsi Produk</th>
+                                        <th>Stok Tersedia</th>
+                                        <th>Harga</th>
                                         <th> </th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr class="odd gradeX">
-                                        <td>Trident</td>
-                                        <td>Internet Explorer 4.0</td>
-                                        <td>Win 95+</td>
-                                        <td class="center">4</td>
-                                        <td class="center">X</td>
-                                        <td><button type="button" class="btn btn-info">Info</button> <button type="button" class="btn btn-danger">Delete</button></td>
-                                    </tr>
-                                    <tr class="even gradeC">
-                                        <td>Trident</td>
-                                        <td>Internet Explorer 5.0</td>
-                                        <td>Win 95+</td>
-                                        <td class="center">5</td>
-                                        <td class="center">C</td>
-                                        <td><button type="button" class="btn btn-info">Info</button> <button type="button" class="btn btn-danger">Delete</button></td>
-                                    </tr>
-                                    <tr class="odd gradeA">
-                                        <td>Trident</td>
-                                        <td>Internet Explorer 5.5</td>
-                                        <td>Win 95+</td>
-                                        <td class="center">5.5</td>
-                                        <td class="center">A</td>
-                                        <td><button type="button" class="btn btn-info">Info</button> <button type="button" class="btn btn-danger">Delete</button></td>
-                                    </tr>
-                                    <tr class="even gradeA">
-                                        <td>Trident</td>
-                                        <td>Internet Explorer 6</td>
-                                        <td>Win 98+</td>
-                                        <td class="center">6</td>
-                                        <td class="center">A</td>
-                                        <td><button type="button" class="btn btn-info">Info</button> <button type="button" class="btn btn-danger">Delete</button></td>
-                                    </tr>
-                                    <tr class="odd gradeA">
-                                        <td>Trident</td>
-                                        <td>Internet Explorer 7</td>
-                                        <td>Win XP SP2+</td>
-                                        <td class="center">7</td>
-                                        <td class="center">A</td>
-                                        <td><button type="button" class="btn btn-info">Info</button> <button type="button" class="btn btn-danger">Delete</button></td>
-                                    </tr>
-                                    <tr class="even gradeA">
-                                        <td>Trident</td>
-                                        <td>AOL browser (AOL desktop)</td>
-                                        <td>Win XP</td>
-                                        <td class="center">6</td>
-                                        <td class="center">A</td>
-                                        <td><button type="button" class="btn btn-info">Info</button> <button type="button" class="btn btn-danger">Delete</button></td>
-                                    </tr>
-                                    <tr class="gradeA">
-                                        <td>Gecko</td>
-                                        <td>Firefox 1.0</td>
-                                        <td>Win 98+ / OSX.2+</td>
-                                        <td class="center">1.7</td>
-                                        <td class="center">A</td>
-                                        <td><button type="button" class="btn btn-info">Info</button> <button type="button" class="btn btn-danger">Delete</button></td>
-                                    </tr>
-                                    <tr class="gradeA">
-                                        <td>Gecko</td>
-                                        <td>Firefox 1.5</td>
-                                        <td>Win 98+ / OSX.2+</td>
-                                        <td class="center">1.8</td>
-                                        <td class="center">A</td>
-                                        <td><button type="button" class="btn btn-info">Info</button> <button type="button" class="btn btn-danger">Delete</button></td>
-                                    </tr>
-                                    <tr class="gradeA">
-                                        <td>Gecko</td>
-                                        <td>Firefox 2.0</td>
-                                        <td>Win 98+ / OSX.2+</td>
-                                        <td class="center">1.8</td>
-                                        <td class="center">A</td>
-                                        <td><button type="button" class="btn btn-info">Info</button> <button type="button" class="btn btn-danger">Delete</button></td>
-                                    </tr>
-                                    <tr class="gradeA">
-                                        <td>Gecko</td>
-                                        <td>Firefox 3.0</td>
-                                        <td>Win 2k+ / OSX.3+</td>
-                                        <td class="center">1.9</td>
-                                        <td class="center">A</td>
-                                        <td><button type="button" class="btn btn-info">Info</button> <button type="button" class="btn btn-danger">Delete</button></td>
-                                    </tr>
-                                    <tr class="gradeA">
-                                        <td>Gecko</td>
-                                        <td>Camino 1.0</td>
-                                        <td>OSX.2+</td>
-                                        <td class="center">1.8</td>
-                                        <td class="center">A</td>
-                                        <td><button type="button" class="btn btn-info">Info</button> <button type="button" class="btn btn-danger">Delete</button></td>
-                                    </tr>
-                                    <tr class="gradeA">
-                                        <td>Gecko</td>
-                                        <td>Camino 1.5</td>
-                                        <td>OSX.3+</td>
-                                        <td class="center">1.8</td>
-                                        <td class="center">A</td>
-                                        <td><button type="button" class="btn btn-info">Info</button> <button type="button" class="btn btn-danger">Delete</button></td>
-                                    </tr>
-                                    <tr class="gradeA">
-                                        <td>Gecko</td>
-                                        <td>Netscape 7.2</td>
-                                        <td>Win 95+ / Mac OS 8.6-9.2</td>
-                                        <td class="center">1.7</td>
-                                        <td class="center">A</td>
-                                        <td><button type="button" class="btn btn-info">Info</button> <button type="button" class="btn btn-danger">Delete</button></td>
-                                    </tr>
-                                    <tr class="gradeA">
-                                        <td>Gecko</td>
-                                        <td>Netscape Browser 8</td>
-                                        <td>Win 98SE+</td>
-                                        <td class="center">1.7</td>
-                                        <td class="center">A</td>
-                                        <td><button type="button" class="btn btn-info">Info</button> <button type="button" class="btn btn-danger">Delete</button></td>
-                                    </tr>
-                                    <tr class="gradeA">
-                                        <td>Gecko</td>
-                                        <td>Netscape Navigator 9</td>
-                                        <td>Win 98+ / OSX.2+</td>
-                                        <td class="center">1.8</td>
-                                        <td class="center">A</td>
-                                        <td><button type="button" class="btn btn-info">Info</button> <button type="button" class="btn btn-danger">Delete</button></td>
-                                    </tr>
-                                    <tr class="gradeA">
-                                        <td>Gecko</td>
-                                        <td>Mozilla 1.0</td>
-                                        <td>Win 95+ / OSX.1+</td>
-                                        <td class="center">1</td>
-                                        <td class="center">A</td>
-                                        <td><button type="button" class="btn btn-info">Info</button> <button type="button" class="btn btn-danger">Delete</button></td>
-                                    </tr>
-                                    <tr class="gradeA">
-                                        <td>Gecko</td>
-                                        <td>Mozilla 1.1</td>
-                                        <td>Win 95+ / OSX.1+</td>
-                                        <td class="center">1.1</td>
-                                        <td class="center">A</td>
-                                        <td><button type="button" class="btn btn-info">Info</button> <button type="button" class="btn btn-danger">Delete</button></td>
+                                    <?php
+                                    $no = 1;
+                                    foreach ($produk->result() as $p) {
+                                    ?>
+                                        <tr class="odd gradeX">
+                                            <td><?= $no++; ?></td>
+                                            <td><?= $p->sku; ?></td>
+                                            <td><?= $p->nama_produk; ?></td>
+                                            <td><?= $p->deskripsi; ?></td>
+                                            <td class="center"><?= $p->stok; ?></td>
+                                            <td class="center"><?= $p->harga; ?></td>
+                                            <td><a href="<?= site_url('admin/editProduk/' . $p->id); ?>"><button type="button" class="btn btn-info">Info</button> </a><a href="<?= site_url('admin/hapusProduk/' . $p->id); ?>"><button type="button" class="btn btn-danger">Delete</button></a></td>
+                                        </tr>
+                                    <?php } ?>
                                     </tr>
                                 </tbody>
                             </table>

@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Administrator</title>
+    <title><?php echo $judul; ?></title>
 
     <!-- Bootstrap Core CSS -->
     <link href="<?= base_url('assets/tampilan_admin/'); ?>css/bootstrap.min.css" rel="stylesheet">

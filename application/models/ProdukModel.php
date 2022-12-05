@@ -14,15 +14,26 @@ class ProdukModel extends CI_Model
         return $result;
     }
 
-    public function best_deal_product()
+    public function hapus_produk($id)
     {
-        $data = $this->db->where('is_available', 1)
-            ->order_by('current_discount', 'DESC')
-            ->limit(1)
-            ->get('products')
-            ->row();
+        $this->db->where('id', $id);
+        $this->db->delete('produk');
+    }
 
-        return $data;
+    public function edit_produk($id)
+    {
+        $query = $this->db->where('id', $id)->get('produk');
+        return $query->row();
+    }
+
+    public function update_produk($data, $id)
+    {
+        return $this->db->update('produk', $data, $id);
+    }
+
+    public function simpan_produk($data)
+    {
+        return $this->db->insert('produk', $data);
     }
 
     public function is_product_exist($id, $sku)
