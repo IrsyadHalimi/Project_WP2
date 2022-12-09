@@ -20,19 +20,28 @@ class Admin extends CI_Controller
         $data['jumlahLayanan'] = $this->LayananModel->jumlah_layanan();
         $data['jumlahKaryawan'] = $this->KaryawanModel->jumlah_karyawan();
         $data['jumlahAntrian'] = $this->BookingModel->jumlah_antrian();
-        //passing data controller ke view
-        $data['batal'] = "0";
-
-        //active record dengan nama edi
-        $aktif = array('batal' => '0');
-
-        // query memanggil function tigatable di model
-        $data['joinbooking'] = $this->BookingModel->join_booking($aktif);
+        $aktif1 = array('batal' => '0');
+        $aktif2 = array('batal' => '0');
+        $data['joinbooking1'] = $this->BookingModel->join_booking1($aktif1);
+        $data['joinbooking2'] = $this->BookingModel->join_booking2($aktif2);
 
         $this->load->view('admin/templates/header', $data);
         $this->load->view('admin/templates/sidebar');
         $this->load->view('admin/index', $data);
         $this->load->view('admin/templates/footer');
+    }
+
+    function hapusBooking()
+    {
+        $data = $this->uri->segment(3);
+        $this->BookingModel->hapus_booking($data);
+        $this->session->set_flashdata('data', '<div class="alert alert-success alert-dismissible"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>Data Berhasil Dihapus!!</div>');
+        redirect('Admin');
+    }
+
+    function antrianBooking()
+    {
+        // code
     }
 
 

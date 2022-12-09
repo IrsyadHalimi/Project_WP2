@@ -14,6 +14,17 @@ class KategoriModel extends CI_Model
         $this->db->insert('kategori_layanan', $data);
     }
 
+    function edit_kategori($where, $table)
+    {
+        return $this->db->get_where($table, $where);
+    }
+
+    function ubah_kategori($where, $data, $table)
+    {
+        $this->db->where($where);
+        $this->db->update($table, $data);
+    }
+
     function hapus_kategori($data)
     {
         $this->db->where('id_kategori', $data);

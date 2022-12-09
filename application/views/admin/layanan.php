@@ -42,7 +42,7 @@
                                             <td><?= $l->deskripsi_layanan; ?></td>
                                             <td><?= $l->biaya_layanan; ?></td>
                                             <td><?= $l->durasi_layanan; ?></td>
-                                            <td><a href="<?= site_url('#'); ?>"><button type="button" class="btn btn-warning">Ubah</button></a><br>
+                                            <td><a href="<?= site_url('Layanan/editLayanan/' . $l->id_layanan); ?>"><button type="button" class="btn btn-warning">Ubah</button></a><br>
                                                 <br><a href="<?= site_url('Layanan/hapusLayanan/' . $l->id_layanan); ?>"><button type="button" class="btn btn-danger">Hapus</button></a>
                                             </td>
                                         </tr>

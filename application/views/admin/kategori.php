@@ -35,7 +35,7 @@
                                         <tr class="odd gradeX">
                                             <td><?= $kat->id_kategori; ?></td>
                                             <td><?= $kat->nama_kategori; ?></td>
-                                            <td><a href="<?= site_url('#'); ?>"><button type="button" class="btn btn-warning">Ubah</button></a> <a href="<?= site_url('Kategori/hapusKategori/' . $kat->id_kategori); ?>"><button type="button" class="btn btn-danger">Hapus</button></a></td>
+                                            <td><a href="<?= site_url('Kategori/editKategori/' . $kat->id_kategori); ?>"><button type="button" class="btn btn-warning">Ubah</button></a> <a href="<?= site_url('Kategori/hapusKategori/' . $kat->id_kategori); ?>"><button type="button" class="btn btn-danger">Hapus</button></a></td>
                                         </tr>
                                     <?php } ?>
                                 </tbody>

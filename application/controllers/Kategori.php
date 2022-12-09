@@ -44,6 +44,35 @@ class Kategori extends CI_Controller
         }
     }
 
+    function editKategori($id_kategori)
+    {
+        $data['judul'] = 'Edit Kategori';
+        $where = array('id_kategori' => $id_kategori);
+        $data['kategori'] = $this->KategoriModel->edit_kategori($where, 'kategori_layanan')->result();
+        $this->load->view('admin/templates/header', $data);
+        $this->load->view('admin/templates/sidebar');
+        $this->load->view('admin/ubah_kategori', $data);
+        $this->load->view('admin/templates/footer');
+    }
+
+    function ubahKategori()
+    {
+        $id_kategori = $this->input->post('id_kategori');
+        $nama_kategori = $this->input->post('nama_kategori');
+
+        $data = array(
+            'nama_kategori' => $nama_kategori,
+        );
+
+        $where = array(
+            'id_kategori' => $id_kategori
+        );
+
+        $this->KategoriModel->ubah_kategori($where, $data, 'kategori_layanan');
+        redirect('Kategori');
+    }
+
+
     function hapusKategori()
     {
         $data = $this->uri->segment(3);

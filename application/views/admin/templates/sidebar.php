@@ -55,9 +55,6 @@
                         <a href="<?= base_url('Admin'); ?>" class="active"><i class="fa fa-dashboard fa-fw"></i> Dasbor</a>
                     </li>
                     <li>
-                        <a href="<?= base_url('Booking'); ?>" class="active"><i class="fa fa-clock-o fa-fw"></i> Booking</a>
-                    </li>
-                    <li>
                         <a href="<?= base_url('Klien'); ?>" class="active"><i class="fa fa-smile-o fa-fw"></i> Klien</a>
                     </li>
                     <li>

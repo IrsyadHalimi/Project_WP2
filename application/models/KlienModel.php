@@ -5,8 +5,11 @@ class KlienModel extends CI_Model
 {
     public function tampilkan_klien()
     {
-        $result = $this->db->get('klien');
-        return $result;
+        $this->db->select('*');
+        $this->db->from('klien');
+        $this->db->order_by('nama_depan_klien');
+        $query = $this->db->get();
+        return $query;
     }
     public function simpanData($data = null)
     {

@@ -56,6 +56,41 @@ class Layanan extends CI_Controller
         }
     }
 
+    function editLayanan($id_layanan)
+    {
+        $data['judul'] = 'Edit Layanan';
+        $where = array('id_layanan' => $id_layanan);
+        $data['layanan'] = $this->LayananModel->edit_layanan($where, 'layanan')->result();
+        $this->load->view('admin/templates/header', $data);
+        $this->load->view('admin/templates/sidebar');
+        $this->load->view('admin/ubah_layanan', $data);
+        $this->load->view('admin/templates/footer');
+    }
+
+    function ubahLayanan()
+    {
+        $id_layanan = $this->input->post('id_layanan');
+        $nama_layanan = $this->input->post('nama_layanan');
+        $deskripsi_layanan = $this->input->post('deskripsi_layanan');
+        $biaya_layanan = $this->input->post('biaya_layanan');
+        $durasi_layanan = $this->input->post('durasi_layanan');
+        $id_kategori = $this->input->post('id_kategori');
+
+        $data = array(
+            'nama_layanan' => $nama_layanan,
+            'deskripsi_layanan' => $deskripsi_layanan,
+            'biaya_layanan' => $biaya_layanan,
+            'durasi_layanan' => $durasi_layanan,
+        );
+
+        $where = array(
+            'id_layanan' => $id_layanan
+        );
+
+        $this->LayananModel->ubah_layanan($where, $data, 'layanan');
+        redirect('Layanan');
+    }
+
     function hapusLayanan()
     {
         $data = $this->uri->segment(3);

@@ -33,10 +33,10 @@
                                     ?>
                                         <tr class="odd gradeX">
                                             <td><?= $k->id_klien; ?></td>
-                                            <td><?= $k->nama_depan; ?></td>
-                                            <td><?= $k->nama_belakang; ?></td>
-                                            <td><?= $k->no_telepon; ?></td>
-                                            <td><?= $k->email; ?></td>
+                                            <td><?= $k->nama_depan_klien; ?></td>
+                                            <td><?= $k->nama_belakang_klien; ?></td>
+                                            <td><?= $k->no_telepon_klien; ?></td>
+                                            <td><?= $k->email_klien; ?></td>
                                         </tr>
                                     <?php } ?>
                                 </tbody>

@@ -84,22 +84,64 @@
                                 <thead>
                                     <tr>
                                         <th>Waktu Mulai</th>
-                                        <th>Jenis Layanan</th>
                                         <th>Perkiraan Waktu Selesai</th>
+                                        <th>Nama Klien</th>
+                                        <th>Karyawan</th>
+                                        <th> </th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <?php
-                                    foreach ($joinbooking as $jb) {
+                                    foreach ($joinbooking2 as $jb2) {
+                                    ?>
+                                        <tr class="odd gradeX">
+                                            <td><?= $jb2->waktu_mulai; ?></td>
+                                            <td><?= $jb2->waktu_selesai; ?></td>
+                                            <td><?= $jb2->nama_depan_klien; ?></td>
+                                            <td><?= $jb2->nama_depan; ?></td>
+                                            <td><a href="<?= site_url('Admin/hapusBooking/' . $jb2->id_booking); ?>"><button type="button" class="btn btn-danger">Hapus</button></a></td>
+                                        </tr>
+                                    <?php } ?>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- /.table-responsive -->
+                    </div>
+                    <!-- /.panel-body -->
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        Data Booking
+                    </div>
+                    <!-- /.panel-heading -->
+                    <div class="panel-body">
+                        <div class="table-responsive">
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Waktu Mulai</th>
+                                        <th>Perkiraan Waktu Selesai</th>
+                                        <th>Nama Klien</th>
+                                        <th>No Telepon Klien</th>
+                                        <th>Karyawan</th>
+                                        <th> </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php
+                                    foreach ($joinbooking1 as $jb) {
                                     ?>
                                         <tr class="odd gradeX">
                                             <td><?= $jb->waktu_mulai; ?></td>
                                             <td><?= $jb->waktu_selesai; ?></td>
                                             <td><?= $jb->nama_depan_klien; ?></td>
+                                            <td><?= $jb->no_telepon_klien; ?></td>
                                             <td><?= $jb->nama_depan; ?></td>
-                                            <td><?= $jb->nama_belakang; ?></td>
-                                            <td><?= $jb->nama_depan; ?></td>
-
+                                            <td><a href="<?= site_url('Admin/hapusBooking/' . $jb->id_booking); ?>"><button type="button" class="btn btn-danger">Hapus</button></a></td>
                                         </tr>
                                     <?php } ?>
                                 </tbody>

@@ -24,7 +24,7 @@ class BookingModel extends CI_Model
         return $query->result();
     }
 
-    public function join_booking($aktif)
+    public function join_booking1($aktif)
     {
         $this->db->select('*');
         $this->db->from('booking');
@@ -33,5 +33,24 @@ class BookingModel extends CI_Model
         $this->db->where($aktif);
         $query = $this->db->get();
         return $query->result();
+    }
+
+    public function join_booking2($aktif)
+    {
+        $this->db->select('*');
+        $this->db->from('booking');
+        $this->db->join('karyawan', 'karyawan.id_karyawan=booking.id_karyawan');
+        $this->db->join('klien', 'klien.id_klien=booking.id_klien');
+        $this->db->where($aktif);
+        $this->db->order_by('waktu_mulai');
+        $this->db->limit(3);
+        $query = $this->db->get();
+        return $query->result();
+    }
+
+    function hapus_booking($data)
+    {
+        $this->db->where('id_booking', $data);
+        $this->db->delete('booking');
     }
 }
