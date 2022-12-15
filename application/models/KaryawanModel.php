@@ -40,4 +40,10 @@ class KaryawanModel extends CI_Model
         $this->db->where('id_karyawan', $data);
         $this->db->delete('karyawan');
     }
+
+    function ambil()
+    {
+        $query = $this->db->query("SELECT * FROM karyawan ORDER BY nama_depan ASC");
+        return $query->result();
+    }
 }

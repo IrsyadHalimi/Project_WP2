@@ -8,15 +8,17 @@ class Layanan extends CI_Controller
         parent::__construct();
         $this->load->helper('wp2');
         $this->load->model('LayananModel');
+        $this->load->model('KategoriModel');
+        cek_login();
     }
 
     public function index()
     {
         $data['judul'] = 'Data Layanan';
-        $data['layanan'] = $this->LayananModel->tampilkan_layanan();
-
+        $data['layanan'] = $this->LayananModel->join_layanan();
+        $data['admin'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
         $this->load->view('admin/templates/header', $data);
-        $this->load->view('admin/templates/sidebar');
+        $this->load->view('admin/templates/sidebar', $data);
         $this->load->view('admin/layanan', $data);
         $this->load->view('admin/templates/footer');
     }
@@ -25,15 +27,16 @@ class Layanan extends CI_Controller
     {
         $data['judul'] = 'Tambah Data Layanan';
         $data['layanan'] = $this->LayananModel->tampilkan_layanan();
-
+        $data['kategori'] = $this->KategoriModel->ambil();
+        $data['admin'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
         $this->form_validation->set_rules('nama_layanan', 'Nama Layanan', 'required', ['required' => 'Nama Layanan harus diisi']);
         $this->form_validation->set_rules('deskripsi_layanan', 'Deskripsi', 'required', ['required' => 'Deskripsi harus diisi']);
-        $this->form_validation->set_rules('id_kategori', 'Nama Layanan', 'required', ['required' => 'Kategori harus diisi']);
+        $this->form_validation->set_rules('id_kategori', 'Id Kategori', 'required', ['required' => 'Kategori harus diisi']);
         $this->form_validation->set_rules('biaya_layanan', 'Biaya Layanan', 'required|numeric', ['required' => 'Biaya Layanan harus diisi', 'numeric' => 'Isi dengan angka']);
         $this->form_validation->set_rules('durasi_layanan', 'Durasi Layanan', 'required|numeric', ['required' => 'Durasi Layanan harus diisi', 'numeric' => 'Isi dengan angka']);
         if ($this->form_validation->run() == false) {
             $this->load->view('admin/templates/header', $data);
-            $this->load->view('admin/templates/sidebar');
+            $this->load->view('admin/templates/sidebar', $data);
             $this->load->view('admin/tambah_layanan', $data);
             $this->load->view('admin/templates/footer');
         } else {
@@ -44,7 +47,7 @@ class Layanan extends CI_Controller
             $Durasi = $this->input->post('durasi_layanan');
 
             $data = array(
-                'nama_depan' => $NamaLayanan,
+                'nama_layanan' => $NamaLayanan,
                 'deskripsi_layanan' => $Deskripsi,
                 'biaya_layanan' => $Biaya,
                 'durasi_layanan' => $Durasi,
@@ -52,7 +55,7 @@ class Layanan extends CI_Controller
             );
             $this->LayananModel->simpan_layanan($data);
             $this->session->set_flashdata('data', '<div class="alert alert-success alert-dismissible"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>Data Berhasil Ditambahkan!!</div>');
-            redirect('Layanan');
+            redirect('Admin/Layanan');
         }
     }
 
@@ -60,9 +63,11 @@ class Layanan extends CI_Controller
     {
         $data['judul'] = 'Edit Layanan';
         $where = array('id_layanan' => $id_layanan);
+        $data['kategori'] = $this->KategoriModel->ambil();
         $data['layanan'] = $this->LayananModel->edit_layanan($where, 'layanan')->result();
+        $data['admin'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
         $this->load->view('admin/templates/header', $data);
-        $this->load->view('admin/templates/sidebar');
+        $this->load->view('admin/templates/sidebar', $data);
         $this->load->view('admin/ubah_layanan', $data);
         $this->load->view('admin/templates/footer');
     }
@@ -81,6 +86,7 @@ class Layanan extends CI_Controller
             'deskripsi_layanan' => $deskripsi_layanan,
             'biaya_layanan' => $biaya_layanan,
             'durasi_layanan' => $durasi_layanan,
+            'id_kategori' => $id_kategori
         );
 
         $where = array(
@@ -88,14 +94,14 @@ class Layanan extends CI_Controller
         );
 
         $this->LayananModel->ubah_layanan($where, $data, 'layanan');
-        redirect('Layanan');
+        redirect('Admin/Layanan');
     }
 
     function hapusLayanan()
     {
-        $data = $this->uri->segment(3);
+        $data = $this->uri->segment(4);
         $this->LayananModel->hapus_layanan($data);
         $this->session->set_flashdata('data', '<div class="alert alert-success alert-dismissible"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>Data Berhasil Dihapus!!</div>');
-        redirect('Layanan');
+        redirect('Admin/Layanan');
     }
 }

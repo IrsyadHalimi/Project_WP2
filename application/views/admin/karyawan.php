@@ -10,14 +10,12 @@
         </div>
         <!-- /.row -->
         <div class="row">
-            <div class="col-lg-6">
-                <?php echo $this->session->flashdata('data'); ?>
-            </div>
-            <div class="col-lg-10">
+            <?php echo $this->session->flashdata('data'); ?>
+            <br>
+            <div class="col-lg-14">
                 <div class="panel panel-default">
-
                     <div class="panel-heading">
-                        <a href="<?= site_url('Karyawan/tambahKaryawan'); ?>"><button type="button" class="btn btn-info btn-circle"><i class="fa fa-plus"></i></button></a>
+                        <a href="<?= site_url('Admin/Karyawan/tambahKaryawan'); ?>"><button type="button" class="btn btn-info btn-circle"><i class="fa fa-plus"></i></button></a>
                         Tambah Data Karyawan
                     </div>
                     <!-- /.panel-heading -->
@@ -42,7 +40,8 @@
                                             <td><?= $kar->nama_belakang; ?></td>
                                             <td><?= $kar->no_telepon; ?></td>
                                             <td><?= $kar->email; ?></td>
-                                            <td><a href="<?= site_url('Karyawan/editKaryawan/' . $kar->id_karyawan); ?>"><button type="button" class="btn btn-warning">Ubah</button></a> <a href="<?= site_url('Karyawan/hapusKaryawan/' . $kar->id_karyawan); ?>"><button type="button" class="btn btn-danger">Hapus</button></a></td>
+                                            <td><a href="<?= site_url('Admin/Karyawan/editKaryawan/' . $kar->id_karyawan); ?>"><button type="button" class="btn btn-warning">Ubah</button></a> <a href="<?= site_url('Admin/Karyawan/hapusKaryawan/' . $kar->id_karyawan); ?>"><button type="button" class="btn btn-danger">Hapus</button></a> <a href="<?= site_url('Admin/Karyawan/jadwalKaryawan/' . $kar->id_karyawan); ?>"><button type="button" class="btn btn-success">Atur Jadwal</button></a></td>
+                                            </td>
                                         </tr>
                                     <?php } ?>
                                 </tbody>

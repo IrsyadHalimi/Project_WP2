@@ -2,11 +2,16 @@
 
 class Autentifikasi extends CI_Controller
 {
+    function __construct()
+    {
+        parent::__construct();
+        $this->load->model('ModelUser');
+    }
     public function index()
     {
 
         if ($this->session->userdata('email')) {
-            redirect('user');
+            redirect('booking');
         }
 
         $this->form_validation->set_rules('email', 'Alamat Email', 'required|trim|valid_email', [
@@ -48,12 +53,12 @@ class Autentifikasi extends CI_Controller
                     $this->session->set_userdata($data);
 
                     if ($user['role_id'] == 1) {
-                        redirect('admin');
+                        redirect('Admin/Admin');
                     } else {
                         if ($user['image'] == 'default.jpg') {
                             $this->session->set_flashdata('pesan', '<div class="alert alert-info alert-message" role="alert">Silahkan Ubah Profile Anda untuk Ubah Photo Profil</div>');
                         }
-                        redirect('user');
+                        redirect('booking');
                     }
                 } else {
                     $this->session->set_flashdata('pesan', '<div class="alert alert-danger alert message" role="alert">Password Salah!</div>');
@@ -136,23 +141,13 @@ class Autentifikasi extends CI_Controller
             redirect('autentifikasi');
         }
     }
+
     public function logout()
     {
-        $check_session_in_cookie = $this->input->cookie('__ACTIVE_SESSION_DATA');
-        $check_session_in_session = $this->session->userdata('__ACTIVE_SESSION_DATA');
+        $this->session->unset_userdata('email');
+        $this->session->unset_userdata('role_id');
 
-        if ($check_session_in_cookie) {
-            delete_cookie('__ACTIVE_SESSION_DATA');
-
-            $this->session->set_flashdata('login_flash', 'Berhasil logout!');
-        } else if ($check_session_in_session) {
-            $this->session->unset_userdata('__ACTIVE_SESSION_DATA');
-
-            $this->session->set_flashdata('login_flash', 'Berhasil logout!');
-        } else {
-            $this->session->set_flashdata('login_flash', 'Anda belum login!');
-        }
-
-        redirect('autentifikasi/');
+        $this->session->set_flashdata('pesan', '<div class="alert alert-success" role="alert">Anda telah berhasil Logout!</div>');
+        redirect('autentifikasi');
     }
 }

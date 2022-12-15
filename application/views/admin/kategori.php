@@ -15,7 +15,7 @@
             <div class="col-lg-8">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <a href="<?= base_url('Kategori/tambahKategori'); ?>"><button type="button" class="btn btn-info btn-circle"><i class="fa fa-plus"></i></button></a>
+                        <a href="<?= base_url('Admin/Kategori/tambahKategori'); ?>"><button type="button" class="btn btn-info btn-circle"><i class="fa fa-plus"></i></button></a>
                         Tambah Data Kategori Layanan
                     </div>
                     <!-- /.panel-heading -->
@@ -35,7 +35,7 @@
                                         <tr class="odd gradeX">
                                             <td><?= $kat->id_kategori; ?></td>
                                             <td><?= $kat->nama_kategori; ?></td>
-                                            <td><a href="<?= site_url('Kategori/editKategori/' . $kat->id_kategori); ?>"><button type="button" class="btn btn-warning">Ubah</button></a> <a href="<?= site_url('Kategori/hapusKategori/' . $kat->id_kategori); ?>"><button type="button" class="btn btn-danger">Hapus</button></a></td>
+                                            <td><a href="<?= site_url('Admin/Kategori/editKategori/' . $kat->id_kategori); ?>"><button type="button" class="btn btn-warning">Ubah</button></a> <a href="<?= site_url('Admin/Kategori/hapusKategori/' . $kat->id_kategori); ?>"><button type="button" class="btn btn-danger">Hapus</button></a></td>
                                         </tr>
                                     <?php } ?>
                                 </tbody>

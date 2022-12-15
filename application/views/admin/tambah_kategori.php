@@ -8,7 +8,7 @@
             </div>
         </div>
         <div class="form-group">
-            <form action="<?= base_url('Kategori/tambahKategori'); ?>" method="post">
+            <form action="<?= base_url('Admin/Kategori/tambahKategori'); ?>" method="post">
                 <label>Masukkan Nama Kategori</label>
                 <input type="text" name="nama_kategori" class="form-control" value="<?= set_value('nama_kategori'); ?>"><?= form_error('nama_kategori', '<small class="text-danger pl-3">', '</small>'); ?><br>
                 <button type="submit" class="btn btn-primary">Simpan</button>

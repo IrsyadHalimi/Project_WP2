@@ -53,4 +53,18 @@ class BookingModel extends CI_Model
         $this->db->where('id_booking', $data);
         $this->db->delete('booking');
     }
+
+    // public function simpan_booking()
+    // {
+    //     $builder = $this->db->table('booking');
+    //     $builder->join('klien', 'klien.id_klien=booking.id_klien');
+    //     $builder->join('karyawan', 'karyawan.id_karyawan=booking.id_karyawan');
+    //     $query = $builder->get();
+    //     return $query->getResult();
+    // }
+
+    public function simpan_booking($data = null)
+    {
+        $this->db->insert('booking', $data);
+    }
 }

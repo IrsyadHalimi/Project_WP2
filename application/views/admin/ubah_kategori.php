@@ -11,7 +11,7 @@
             <?php
             foreach ($kategori as $k) {
             ?>
-                <form action="<?= base_url('Kategori/ubahKategori'); ?>" method="post">
+                <form action="<?= base_url('Admin/Kategori/ubahKategori'); ?>" method="post">
                     <label>Masukkan Nama Kategori</label>
                     <input type="hidden" name="id_kategori" class="form-control" value="<?= $k->id_kategori ?>">
                     <input type="text" name="nama_kategori" class="form-control" value="<?= $k->nama_kategori ?><?= set_value('nama_kategori'); ?>"><?= form_error('nama_kategori', '<small class="text-danger pl-3">', '</small>'); ?><br>

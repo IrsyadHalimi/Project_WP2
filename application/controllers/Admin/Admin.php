@@ -11,11 +11,13 @@ class Admin extends CI_Controller
         $this->load->model('LayananModel');
         $this->load->model('KaryawanModel');
         $this->load->model('BookingModel');
+        cek_login();
     }
 
     public function index()
     {
-        $data['judul'] = 'Dasbor';
+        $data['judul'] = 'Dashboard';
+        $data['admin'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
         $data['jumlahKlien'] = $this->KlienModel->jumlah_klien();
         $data['jumlahLayanan'] = $this->LayananModel->jumlah_layanan();
         $data['jumlahKaryawan'] = $this->KaryawanModel->jumlah_karyawan();
@@ -26,17 +28,17 @@ class Admin extends CI_Controller
         $data['joinbooking2'] = $this->BookingModel->join_booking2($aktif2);
 
         $this->load->view('admin/templates/header', $data);
-        $this->load->view('admin/templates/sidebar');
+        $this->load->view('admin/templates/sidebar', $data);
         $this->load->view('admin/index', $data);
         $this->load->view('admin/templates/footer');
     }
 
     function hapusBooking()
     {
-        $data = $this->uri->segment(3);
+        $data = $this->uri->segment(4);
         $this->BookingModel->hapus_booking($data);
         $this->session->set_flashdata('data', '<div class="alert alert-success alert-dismissible"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>Data Berhasil Dihapus!!</div>');
-        redirect('Admin');
+        redirect('Admin/Admin');
     }
 
     function antrianBooking()
@@ -99,6 +101,6 @@ class Admin extends CI_Controller
     //         'harga' => $harga
     //     ];
     //     $this->ProdukModel->simpan_produk($data);
-    //     redirect('Admin');
+    //     redirect('Admin/Admin');
     // }
 }

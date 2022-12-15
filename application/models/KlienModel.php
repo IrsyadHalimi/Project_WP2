@@ -26,6 +26,11 @@ class KlienModel extends CI_Model
         }
     }
 
+    public function simpan_klien($data = null)
+    {
+        $this->db->insert('klien', $data);
+    }
+
     //     public function getUserWhere($where = null)
     //     {
     //         return $this->db->get_where('klien', $where);

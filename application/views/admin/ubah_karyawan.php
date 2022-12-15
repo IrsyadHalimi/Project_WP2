@@ -11,7 +11,7 @@
             <?php
             foreach ($karyawan as $k) {
             ?>
-                <form action="<?= base_url('Karyawan/ubahKaryawan'); ?>" method="post">
+                <form action="<?= base_url('Admin/Karyawan/ubahKaryawan'); ?>" method="post">
                     <label>Masukkan Nama Depan</label>
                     <input type="hidden" name="id_karyawan" class="form-control" value="<?= $k->id_karyawan ?>">
                     <input type="text" name="nama_depan" class="form-control" value="<?= $k->nama_depan ?><?= set_value('nama_depan'); ?>"><?= form_error('nama_depan', '<small class="text-danger pl-3">', '</small>'); ?><br>

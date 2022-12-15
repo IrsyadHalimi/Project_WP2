@@ -19,6 +19,15 @@ class LayananModel extends CI_Model
         return $result;
     }
 
+    function join_layanan()
+    {
+        $this->db->select('*');
+        $this->db->from('layanan');
+        $this->db->join('kategori_layanan', 'kategori_layanan.id_kategori=layanan.id_kategori');
+        $query = $this->db->get();
+        return $query->result();
+    }
+
     public function simpan_layanan($data = null)
     {
         $this->db->insert('layanan', $data);
@@ -39,5 +48,17 @@ class LayananModel extends CI_Model
     {
         $this->db->where('id_layanan', $data);
         $this->db->delete('layanan');
+    }
+
+    function ambil()
+    {
+        $query = $this->db->query("SELECT * FROM kategori_layanan ORDER BY nama_kategori ASC");
+        return $query->result();
+    }
+
+    function ambil2()
+    {
+        $query = $this->db->query("SELECT * FROM layanan ORDER BY nama_layanan ASC");
+        return $query->result();
     }
 }

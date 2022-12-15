@@ -99,7 +99,7 @@
                                             <td><?= $jb2->waktu_selesai; ?></td>
                                             <td><?= $jb2->nama_depan_klien; ?></td>
                                             <td><?= $jb2->nama_depan; ?></td>
-                                            <td><a href="<?= site_url('Admin/hapusBooking/' . $jb2->id_booking); ?>"><button type="button" class="btn btn-danger">Hapus</button></a></td>
+                                            <td><a href="<?= site_url('Admin/Admin/hapusBooking/' . $jb2->id_booking); ?>"><button type="button" class="btn btn-danger">Hapus</button></a></td>
                                         </tr>
                                     <?php } ?>
                                 </tbody>
@@ -141,7 +141,7 @@
                                             <td><?= $jb->nama_depan_klien; ?></td>
                                             <td><?= $jb->no_telepon_klien; ?></td>
                                             <td><?= $jb->nama_depan; ?></td>
-                                            <td><a href="<?= site_url('Admin/hapusBooking/' . $jb->id_booking); ?>"><button type="button" class="btn btn-danger">Hapus</button></a></td>
+                                            <td><a href="<?= site_url('Admin/Admin/hapusBooking/' . $jb->id_booking); ?>"><button type="button" class="btn btn-danger">Hapus</button></a></td>
                                         </tr>
                                     <?php } ?>
                                 </tbody>

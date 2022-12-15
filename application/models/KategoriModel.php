@@ -9,6 +9,16 @@ class KategoriModel extends CI_Model
         return $result;
     }
 
+    public function tampil_data()
+    {
+        $this->db->order_by('id_kategori', 'ASC');
+        return $this->db->from('kategori_layanan')
+            ->join('tabel_vendor', 'tabel_vendor.id_vendor=tabel_harga.id_vendor')
+            ->join('tabel_hari', 'tabel_hari.id_hari=tabel_harga.id_hari')
+            ->get()
+            ->result();
+    }
+
     public function simpan_kategori($data = null)
     {
         $this->db->insert('kategori_layanan', $data);
@@ -29,5 +39,11 @@ class KategoriModel extends CI_Model
     {
         $this->db->where('id_kategori', $data);
         $this->db->delete('kategori_layanan');
+    }
+
+    function ambil()
+    {
+        $query = $this->db->query("SELECT * FROM kategori_layanan ORDER BY nama_kategori ASC");
+        return $query->result();
     }
 }

@@ -7,6 +7,10 @@ class ModelUser extends CI_Model
     {
         $this->db->insert('user', $data);
     }
+    public function cekAdmin($where)
+    {
+        return $this->db->get($where);
+    }
 
     public function cekData($where)
     {
@@ -32,5 +36,15 @@ class ModelUser extends CI_Model
         $this->db->from('user');
         $this->db->limit(10, 0);
         return $this->db->get();
+    }
+
+    public function ambil_user($user)
+    {
+        $this->db->select('*');
+        $query = $this->db->get_where($this->table, array('nama' => $user));
+        $query = $query->result_array();
+        if ($query) {
+            return $query[0];
+        }
     }
 }

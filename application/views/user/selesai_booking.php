@@ -1,0 +1,1 @@
+<h1><?= $this->session->flashdata('data'); ?></h1>
