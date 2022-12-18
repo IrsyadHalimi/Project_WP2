@@ -21,4 +21,12 @@ class Klien extends CI_Controller
         $this->load->view('admin/klien', $data);
         $this->load->view('admin/templates/footer');
     }
+
+    function hapusKlien()
+    {
+        $data = $this->uri->segment(4);
+        $this->KlienModel->hapus_klien($data);
+        $this->session->set_flashdata('data', '<div class="alert alert-success alert-dismissible"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>Data Berhasil Dihapus!!</div>');
+        redirect('Admin/Klien');
+    }
 }

@@ -7,6 +7,7 @@
                 <h1 class="page-header"><?= $judul; ?></h1>
             </div>
         </div>
+        <?php echo $this->session->flashdata('data'); ?>
         <!-- /.row -->
         <div class="row">
             <div class="col-lg-10">
@@ -25,6 +26,7 @@
                                         <th>Nama Belakang</th>
                                         <th>No Telepon</th>
                                         <th>Email</th>
+                                        <th> </th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -37,6 +39,7 @@
                                             <td><?= $k->nama_belakang_klien; ?></td>
                                             <td><?= $k->no_telepon_klien; ?></td>
                                             <td><?= $k->email_klien; ?></td>
+                                            <td><a href="<?= site_url('Admin/Klien/hapusKlien/' . $k->id_klien); ?>"><button type="button" class="btn btn-danger">Hapus</button></a></td>
                                         </tr>
                                     <?php } ?>
                                 </tbody>

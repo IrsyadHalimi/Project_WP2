@@ -75,7 +75,7 @@ class Autentifikasi extends CI_Controller
     }
     public function blok()
     {
-        $this->load->view('autentifikasi/blok');
+        $this->load->view('blok');
     }
     public function gagal()
     {

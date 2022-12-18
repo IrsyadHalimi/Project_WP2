@@ -33,21 +33,18 @@
                 <ul class="nav" id="side-menu">
                     <li>
                         <a href="<?= base_url('Admin/Admin'); ?>" class="active"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
-                    </li>
+                    </li><br>
                     <li>
                         <a href="<?= base_url('Admin/Klien'); ?>" class="active"><i class="fa fa-smile-o fa-fw"></i> Klien</a>
-                    </li>
+                    </li><br>
                     <li>
                         <a href="<?= base_url('Admin/Karyawan'); ?>" class="active"><i class="fa fa-users fa-fw"></i> Karyawan</a>
-                    </li>
+                    </li><br>
                     <li>
                         <a href="<?= base_url('Admin/Layanan'); ?>" class="active"><i class="fa fa-scissors fa-fw"></i> Layanan</a>
-                    </li>
+                    </li><br>
                     <li>
                         <a href="<?= base_url('Admin/kategori'); ?>" class="active"><i class="fa fa-bars fa-fw"></i> Kategori Layanan</a>
-                    </li>
-                    <li>
-                        <a href="<?= base_url('Admin/Karyawan/jadwalKaryawan'); ?>" class="active"><i class="fa fa-calendar fa-fw"></i> Jadwal Karyawan</a>
                     </li>
                 </ul>
             </div>

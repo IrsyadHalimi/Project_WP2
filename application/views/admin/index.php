@@ -83,23 +83,27 @@
                             <table class="table table-striped">
                                 <thead>
                                     <tr>
-                                        <th>Waktu Mulai</th>
-                                        <th>Perkiraan Waktu Selesai</th>
+                                        <th>Tanggal</th>
+                                        <th>Waktu</th>
                                         <th>Nama Klien</th>
-                                        <th>Karyawan</th>
+                                        <th>Jenis Layanan</th>
+                                        <th>Nama Karyawan</th>
+                                        <th>Biaya Layanan</th>
                                         <th> </th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <?php
-                                    foreach ($joinbooking2 as $jb2) {
+                                    foreach ($antrianbooking as $ab) {
                                     ?>
                                         <tr class="odd gradeX">
-                                            <td><?= $jb2->waktu_mulai; ?></td>
-                                            <td><?= $jb2->waktu_selesai; ?></td>
-                                            <td><?= $jb2->nama_depan_klien; ?></td>
-                                            <td><?= $jb2->nama_depan; ?></td>
-                                            <td><a href="<?= site_url('Admin/Admin/hapusBooking/' . $jb2->id_booking); ?>"><button type="button" class="btn btn-danger">Hapus</button></a></td>
+                                            <td><?= $ab->tanggal; ?></td>
+                                            <td><?= $ab->waktu; ?></td>
+                                            <td><?= $ab->nama_depan_klien; ?></td>
+                                            <td><?= $ab->nama_layanan; ?></td>
+                                            <td><?= $ab->nama_depan; ?></td>
+                                            <td>Rp.<?= $ab->biaya_layanan; ?></td>
+                                            <td><a href="<?= site_url('Admin/Admin/hapusBooking/' . $ab->id_booking); ?>"><button type="button" class="btn btn-danger">Hapus</button></a></td>
                                         </tr>
                                     <?php } ?>
                                 </tbody>
@@ -123,8 +127,8 @@
                             <table class="table table-striped">
                                 <thead>
                                     <tr>
-                                        <th>Waktu Mulai</th>
-                                        <th>Perkiraan Waktu Selesai</th>
+                                        <th>Tanggal</th>
+                                        <th>waktu</th>
                                         <th>Nama Klien</th>
                                         <th>No Telepon Klien</th>
                                         <th>Karyawan</th>
@@ -133,15 +137,15 @@
                                 </thead>
                                 <tbody>
                                     <?php
-                                    foreach ($joinbooking1 as $jb) {
+                                    foreach ($booking as $b) {
                                     ?>
                                         <tr class="odd gradeX">
-                                            <td><?= $jb->waktu_mulai; ?></td>
-                                            <td><?= $jb->waktu_selesai; ?></td>
-                                            <td><?= $jb->nama_depan_klien; ?></td>
-                                            <td><?= $jb->no_telepon_klien; ?></td>
-                                            <td><?= $jb->nama_depan; ?></td>
-                                            <td><a href="<?= site_url('Admin/Admin/hapusBooking/' . $jb->id_booking); ?>"><button type="button" class="btn btn-danger">Hapus</button></a></td>
+                                            <td><?= $b->tanggal; ?></td>
+                                            <td><?= $b->waktu; ?></td>
+                                            <td><?= $b->nama_depan_klien; ?></td>
+                                            <td><?= $b->no_telepon_klien; ?></td>
+                                            <td><?= $b->nama_depan; ?></td>
+                                            <td><a href="<?= site_url('Admin/Admin/hapusBooking/' . $b->id_booking); ?>"><button type="button" class="btn btn-danger">Hapus</button></a></td>
                                         </tr>
                                     <?php } ?>
                                 </tbody>

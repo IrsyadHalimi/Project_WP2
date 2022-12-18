@@ -19,7 +19,7 @@
                                     <option>--</option>
                                     <?php
                                     foreach ($layanan as $l) { ?>
-                                        <option value="<?= $l->id_layanan; ?>"><?= $l->nama_layanan; ?></option>
+                                        <option value="<?= $l->id_layanan; ?>"><?= $l->nama_layanan; ?> -- Rp.<?= $l->biaya_layanan; ?></option>
                                     <?php } ?>
                                 </select><?= form_error('layanan', '<small class="text-danger pl-3">', '</small>'); ?>
                                 <label for="name"> ---- Pilih layanan</label>
@@ -42,22 +42,18 @@
                                 <input class="form-control" type="time" name="waktu" id="waktu"><?= form_error('waktu', '<small class="text-danger pl-3">', '</small>'); ?></input>
                                 <label for="name"> ---- Pilih Waktu Yang Tersedia</label>
                             </div>
-                            <!-- Name input-->
                             <div class="form-floating mb-3">
                                 <input class="form-control" name="nama" value="<?= set_value('nama'); ?>" id="nama"><?= form_error('nama', '<small class="text-danger pl-3">', '</small>'); ?>
                                 <label for="name">Nama Depan</label>
                             </div>
-                            <!-- Email address input-->
                             <div class="form-floating mb-3">
                                 <input class="form-control" name="nama_belakang" value="<?= set_value('nama_belakang'); ?>" id="nama_belakang"><?= form_error('nama_belakang', '<small class="text-danger pl-3">', '</small>'); ?>
                                 <label for="name">Nama Belakang</label>
                             </div>
-                            <!-- Phone number input-->
                             <div class="form-floating mb-3">
                                 <input class="form-control" type="number" name="no_telepon" value="<?= set_value('no_telepon'); ?>" id="no_telepon"><?= form_error('no_telepon', '<small class="text-danger pl-3">', '</small>'); ?>
                                 <label for="name">Nomor Telepon</label>
                             </div>
-                            <!-- Message input-->
                             <div class="form-floating mb-3">
                                 <input class="form-control" type="email" name="email" value="<?= set_value('email'); ?>" id="email"><?= form_error('email', '<small class="text-danger pl-3">', '</small>'); ?>
                                 <label for="name">Email</label>

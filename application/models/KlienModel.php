@@ -31,8 +31,19 @@ class KlienModel extends CI_Model
         $this->db->insert('klien', $data);
     }
 
-    //     public function getUserWhere($where = null)
-    //     {
-    //         return $this->db->get_where('klien', $where);
-    //     }
+    function ambil_id()
+    {
+        $this->db->select('id_klien');
+        $this->db->from('klien');
+        $this->db->order_by('id_klien', 'DESC');
+        $this->db->limit(1);
+        $query = $this->db->get();
+        return $query;
+    }
+
+    function hapus_klien($data)
+    {
+        $this->db->where('id_klien', $data);
+        $this->db->delete('klien');
+    }
 }

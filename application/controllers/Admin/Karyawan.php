@@ -42,11 +42,28 @@ class Karyawan extends CI_Controller
             $NoTelepon = $this->input->post('no_telepon');
             $Email = $this->input->post('email');
 
+            $gambar_karyawan = $_FILES['gambar_karyawan'];
+            if ($gambar_karyawan = '') {
+            } else {
+                $config['upload_path'] = './assets/img/karyawan';
+                $config['allowed_types'] = 'jpg|png|gif';
+
+                $this->load->library('upload', $config);
+
+                if (!$this->upload->do_upload('gambar_karyawan')) {
+                    echo "Upload Gagal";
+                    die();
+                } else {
+                    $gambar_karyawan = $this->upload->data('file_name');
+                }
+            }
+
             $data = array(
                 'nama_depan' => $NamaDepan,
                 'nama_belakang' => $NamaBelakang,
                 'no_telepon' => $NoTelepon,
-                'email' => $Email
+                'email' => $Email,
+                'gambar_karyawan' => $gambar_karyawan
             );
             $this->KaryawanModel->simpan_karyawan($data);
             $this->session->set_flashdata('data', '<div class="alert alert-success alert-dismissible"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>Data Berhasil Ditambahkan!!</div>');
@@ -74,19 +91,35 @@ class Karyawan extends CI_Controller
         $no_telepon = $this->input->post('no_telepon');
         $email = $this->input->post('email');
 
-        $data = array(
-            'nama_depan' => $nama_depan,
-            'nama_belakang' => $nama_belakang,
-            'no_telepon' => $no_telepon,
-            'email' => $email
-        );
+        $upload_image = $_FILES['gambar_karyawan'];
 
-        $where = array(
-            'id_karyawan' => $id_karyawan
-        );
+        if ($upload_image) {
+            $config['allowed_types'] = 'gif|jpg|png';
+            $config['upload_path'] = './assets/img/karyawan/';
 
-        $this->KaryawanModel->ubah_karyawan($where, $data, 'karyawan');
-        redirect('Admin/Karyawan');
+            $this->load->library('upload', $config);
+
+            if (!$this->upload->do_upload('gambar_karyawan')) {
+                echo 'gambar belum diupload';
+            } else {
+                $file = $this->upload->data();
+                $gambar = $file['file_name'];
+                $data = array(
+                    'nama_depan' => $nama_depan,
+                    'nama_belakang' => $nama_belakang,
+                    'no_telepon' => $no_telepon,
+                    'email' => $email,
+                    'gambar_karyawan' => $gambar
+                );
+
+                $where = array(
+                    'id_karyawan' => $id_karyawan
+                );
+
+                $this->KaryawanModel->ubah_karyawan($where, $data, 'karyawan');
+                redirect('Admin/Karyawan');
+            }
+        }
     }
 
     function hapusKaryawan()
@@ -95,18 +128,5 @@ class Karyawan extends CI_Controller
         $this->KaryawanModel->hapus_karyawan($data);
         $this->session->set_flashdata('data', '<div class="alert alert-success alert-dismissible"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>Data Berhasil Dihapus!!</div>');
         redirect('Admin/Karyawan');
-    }
-
-    function jadwalKaryawan()
-    {
-        $data['judul'] = 'Jadwal Karyawan';
-        $data['karyawan'] = $this->KaryawanModel->tampilkan_karyawan();
-        // $where = array('id_karyawan' => $id_karyawan);
-        // $data['jadwalkaryawan'] = $this->KaryawanModel->edit_jadwal($where, 'karyawan')->result();
-        $data['admin'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
-        $this->load->view('admin/templates/header', $data);
-        $this->load->view('admin/templates/sidebar', $data);
-        $this->load->view('admin/jadwal_karyawan', $data);
-        $this->load->view('admin/templates/footer');
     }
 }

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 14, 2022 at 09:17 AM
+-- Generation Time: Dec 18, 2022 at 04:22 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 7.4.27
 
@@ -24,37 +24,18 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `admin`
---
-
-CREATE TABLE `admin` (
-  `id_admin` int(5) NOT NULL,
-  `nama_admin` varchar(50) NOT NULL,
-  `email` varchar(50) NOT NULL,
-  `password` varchar(225) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `admin`
---
-
-INSERT INTO `admin` (`id_admin`, `nama_admin`, `email`, `password`) VALUES
-(1, 'jairiidriss', 'jairiidriss@gmail.com', 'f7c3bc1d808e04732adf679965ccc34ca7ae3441');
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `booking`
 --
 
 CREATE TABLE `booking` (
   `id_booking` int(5) NOT NULL,
   `tanggal_dibuat` datetime NOT NULL,
-  `id_klien` int(5) NOT NULL,
+  `id_klien` int(5) DEFAULT NULL,
   `id_karyawan` int(2) NOT NULL,
-  `waktu_mulai` datetime NOT NULL,
-  `waktu_selesai` datetime NOT NULL,
+  `tanggal` date NOT NULL,
+  `waktu` time NOT NULL,
   `batal` int(1) NOT NULL,
+  `id_layanan` int(5) NOT NULL,
   `alasan_pembatalan` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -62,12 +43,12 @@ CREATE TABLE `booking` (
 -- Dumping data for table `booking`
 --
 
-INSERT INTO `booking` (`id_booking`, `tanggal_dibuat`, `id_klien`, `id_karyawan`, `waktu_mulai`, `waktu_selesai`, `batal`, `alasan_pembatalan`) VALUES
-(10, '2021-02-06 13:40:00', 11, 3, '2021-02-08 09:30:00', '2021-02-08 09:50:00', 0, ''),
-(11, '2021-03-20 08:22:00', 12, 3, '2021-03-22 06:00:00', '2021-03-22 06:20:00', 0, ''),
-(14, '2022-11-30 01:31:00', 1, 3, '2022-12-05 02:00:00', '2022-12-05 02:20:00', 0, ''),
-(15, '2022-11-30 01:32:00', 1, 3, '2022-12-05 02:30:00', '2022-12-05 03:05:00', 0, ''),
-(16, '2022-11-30 01:32:00', 1, 3, '2022-12-05 04:00:00', '2022-12-05 04:15:00', 0, '');
+INSERT INTO `booking` (`id_booking`, `tanggal_dibuat`, `id_klien`, `id_karyawan`, `tanggal`, `waktu`, `batal`, `id_layanan`, `alasan_pembatalan`) VALUES
+(64, '2022-12-17 14:37:03', 74, 21, '2022-12-21', '12:36:00', 0, 10, NULL),
+(65, '2022-12-17 15:19:28', 74, 21, '2022-12-22', '23:18:00', 0, 10, NULL),
+(66, '2022-12-17 15:21:36', 74, 21, '2022-12-22', '23:18:00', 0, 10, NULL),
+(67, '2022-12-17 22:00:48', 80, 22, '2022-12-20', '07:00:00', 0, 7, NULL),
+(68, '2022-12-17 22:01:29', 81, 21, '2022-12-30', '07:00:00', 0, 10, NULL);
 
 -- --------------------------------------------------------
 
@@ -110,20 +91,22 @@ CREATE TABLE `karyawan` (
   `nama_depan` varchar(20) NOT NULL,
   `nama_belakang` varchar(20) NOT NULL,
   `no_telepon` varchar(30) NOT NULL,
-  `email` varchar(50) NOT NULL
+  `email` varchar(50) NOT NULL,
+  `gambar_karyawan` varchar(500) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `karyawan`
 --
 
-INSERT INTO `karyawan` (`id_karyawan`, `nama_depan`, `nama_belakang`, `no_telepon`, `email`) VALUES
-(2, 'K', 'Riko', '0888344444', 'syadhalim059@gmail.com'),
-(3, 'Santino\r\n', 'Tesoro', '', ''),
-(21, 'jonas', 'jupri', '0888344444', 'Jonas@gmail.com'),
-(22, 'putra', 'Maulana', '0888339877', 'rohim666@yahoo.com'),
-(23, 'usman', 'bin affan', '009898685', 'usman123@gmail.com'),
-(24, 'usman', 'bin affan', '087867657', 'usman123@gmail.com');
+INSERT INTO `karyawan` (`id_karyawan`, `nama_depan`, `nama_belakang`, `no_telepon`, `email`, `gambar_karyawan`) VALUES
+(2, 'K', 'Riko', '0888344444', 'syadhalim059@gmail.com', 'image-071.png'),
+(3, 'Ahmad', 'Jaelani', '0886678836', 'ahmad3@yahoo.com', 'image-000.jpg'),
+(21, 'jonas', 'Hanafi', '0888344444', 'jonas322@gmail.com', 'image-058.png'),
+(22, 'Putra', 'Maulana', '0888339877', 'putra123@yahoo.com', 'image-103.jpg'),
+(23, 'Usman', 'Mutaqien', '089898685', 'usman123@gmail.com', 'image-088.png'),
+(24, 'Ali', 'Hadadi', '0878676574', 'ali22@gmail.com', 'image-078.png'),
+(25, 'Jupri', 'Maulana', '0888344444', 'jup666@yahoo.com', 'image-282.png');
 
 -- --------------------------------------------------------
 
@@ -144,7 +127,8 @@ INSERT INTO `kategori_layanan` (`id_kategori`, `nama_kategori`) VALUES
 (2, 'Shaving'),
 (3, 'Face Masking'),
 (4, 'Uncategorized'),
-(8, 'Biasa saja, kamu tak apa');
+(8, 'Biasa saja, kamu tak apa'),
+(9, 'error terus');
 
 -- --------------------------------------------------------
 
@@ -165,16 +149,15 @@ CREATE TABLE `klien` (
 --
 
 INSERT INTO `klien` (`id_klien`, `nama_depan_klien`, `nama_belakang_klien`, `no_telepon_klien`, `email_klien`) VALUES
-(1, 'Dennis', 'S Embry', '651-779-6791', 'dennis_embry@gmail.com'),
-(2, 'Bonnie', 'A Rivera', '714-327-5825', 'bonnie_rivera@yahoo.fr'),
-(3, 'Keltoum', 'Adrar', '0634355566', 'ad.keltoum@gmail.com'),
-(4, 'Hachemi', 'Jairi', '03033346655', 'jairi.hachemi123@gmail.com'),
-(5, 'Idriss', 'Jairi', '0634308303', 'jairiidriss@gmail.com'),
-(7, 'Arabi', 'Adarar', '033201039290', 'arabi.adrar@gmial.com'),
-(8, 'dqsd', 'qsdqsd', '030300303', 'qsdqsdqs@d.ss'),
-(11, 'wer', 'wer', '1321323223', 'asdas@asds.sdf'),
-(12, 'fdhghdfyh', 'dfhdfh', '1234567890', 'asdas@asfds.sdf'),
-(13, 'Irsyad', 'Halimi', '0844557382', 'syadhalim@gmail.com');
+(74, 'IRSYAD', 'simatupang', '0888339877', 'syadhalim059@gmail.com'),
+(77, 'dedi', 'junaedi', '0888339877', 'dedi44@g.com'),
+(78, 'dedi', 'junaedi', '0888339877', 'dedi44@g.com'),
+(79, 'Lim', 'simatupang', '0888339877', 'rohim666@yahoo.com'),
+(80, 'Lim', 'simatupang', '0888339877', 'rohim666@yahoo.com'),
+(81, 'Abracadabra', 'simatupang', '0888339877', 'rohim666@yahoo.com'),
+(82, 'Abracadabra', 'simatupang', '0888339877', 'rohim666@yahoo.com'),
+(83, 'Abracadabra', 'simatupang', '0888339877', 'rohim666@yahoo.com'),
+(84, 'Abracadabra', 'simatupang', '0888339877', 'rohim666@yahoo.com');
 
 -- --------------------------------------------------------
 
@@ -188,17 +171,20 @@ CREATE TABLE `layanan` (
   `deskripsi_layanan` varchar(225) NOT NULL,
   `biaya_layanan` int(10) NOT NULL,
   `durasi_layanan` int(5) NOT NULL,
-  `id_kategori` int(2) NOT NULL
+  `id_kategori` int(2) NOT NULL,
+  `gambar_layanan` varchar(500) NOT NULL DEFAULT 'default.png'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `layanan`
 --
 
-INSERT INTO `layanan` (`id_layanan`, `nama_layanan`, `deskripsi_layanan`, `biaya_layanan`, `durasi_layanan`, `id_kategori`) VALUES
-(1, 'Hair Cut', 'Barber is a person whose occupation is mainly to cut dress groom style and shave men', 50000, 20, 4),
-(4, 'Clean Shaving', 'Barber is a person whose occupation is mainly to cut dress groom style and shave men', 20000, 20, 2),
-(7, 'White Facial', 'Barber is a person whose occupation is mainly to cut dress groom style and shave men', 16000, 15, 3);
+INSERT INTO `layanan` (`id_layanan`, `nama_layanan`, `deskripsi_layanan`, `biaya_layanan`, `durasi_layanan`, `id_kategori`, `gambar_layanan`) VALUES
+(1, 'Hair Cut', 'Potongan rambut reguler (umum) dengan berbagai gaya yang trendi', 50000, 20, 8, 'Screenshot_(1150).png'),
+(4, 'Clean Shaving', 'Memangkas diseluruh area jenggot dan kumis hingga bersih dan mulus', 20000, 10, 2, 'pexels-mídia-8972511.jpg'),
+(7, 'White Facial', 'Mencukur, merapikan janggut serta kumis dengan gaya yang trendi', 30000, 15, 2, 'pexels-cottonbro-3998415.jpg'),
+(10, 'Dreadlock', 'Rambut dengan gaya gimbal yang dibentuk menyerupai tali', 150000, 45, 9, 'pexels-rodnae-productions-12322983.jpg'),
+(11, 'Cukur Jenggot', 'Mencukur pada bagian jenggot', 30000, 5, 8, '52b1f1d7-df3f-46ca-930b-4fb99c02ecde1.jpg');
 
 -- --------------------------------------------------------
 
@@ -251,35 +237,9 @@ INSERT INTO `user` (`id`, `nama`, `email`, `image`, `password`, `role_id`, `is_a
 (9, 'admin sibershop', 'adminsibershop123@gmail.com', 'default.jpg', '$2y$10$ROkBAd2idPoeuDyz7WquteETf6LdDjzO6w0GEXB6FumjBPTtOXnSu', 1, 1, 1670895929),
 (10, 'Klien Sibershop', 'kliensibershop123@gmail.com', 'default.jpg', '$2y$10$q1tFgTne4L952fJIzuFeKufxGqwJvZDGgjqW8ZEWH/bCi9j5yITq2', 2, 1, 1670909796);
 
--- --------------------------------------------------------
-
---
--- Table structure for table `user_role`
---
-
-CREATE TABLE `user_role` (
-  `id` int(11) NOT NULL,
-  `role` varchar(128) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `user_role`
---
-
-INSERT INTO `user_role` (`id`, `role`) VALUES
-(1, 'Administrator'),
-(2, 'Member');
-
 --
 -- Indexes for dumped tables
 --
-
---
--- Indexes for table `admin`
---
-ALTER TABLE `admin`
-  ADD PRIMARY KEY (`id_admin`),
-  ADD KEY `nama_admin` (`nama_admin`,`email`);
 
 --
 -- Indexes for table `booking`
@@ -318,8 +278,7 @@ ALTER TABLE `klien`
 -- Indexes for table `layanan`
 --
 ALTER TABLE `layanan`
-  ADD PRIMARY KEY (`id_layanan`),
-  ADD UNIQUE KEY `id_kategori` (`id_kategori`);
+  ADD PRIMARY KEY (`id_layanan`);
 
 --
 -- Indexes for table `layanan_sudah_dibooking`
@@ -336,26 +295,14 @@ ALTER TABLE `user`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `user_role`
---
-ALTER TABLE `user_role`
-  ADD PRIMARY KEY (`id`);
-
---
 -- AUTO_INCREMENT for dumped tables
 --
-
---
--- AUTO_INCREMENT for table `admin`
---
-ALTER TABLE `admin`
-  MODIFY `id_admin` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `booking`
 --
 ALTER TABLE `booking`
-  MODIFY `id_booking` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id_booking` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=72;
 
 --
 -- AUTO_INCREMENT for table `jadwal_karyawan`
@@ -367,37 +314,31 @@ ALTER TABLE `jadwal_karyawan`
 -- AUTO_INCREMENT for table `karyawan`
 --
 ALTER TABLE `karyawan`
-  MODIFY `id_karyawan` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id_karyawan` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT for table `kategori_layanan`
 --
 ALTER TABLE `kategori_layanan`
-  MODIFY `id_kategori` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id_kategori` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `klien`
 --
 ALTER TABLE `klien`
-  MODIFY `id_klien` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id_klien` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=85;
 
 --
 -- AUTO_INCREMENT for table `layanan`
 --
 ALTER TABLE `layanan`
-  MODIFY `id_layanan` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_layanan` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
-
---
--- AUTO_INCREMENT for table `user_role`
---
-ALTER TABLE `user_role`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

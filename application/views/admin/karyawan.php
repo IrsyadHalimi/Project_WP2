@@ -29,6 +29,7 @@
                                         <th>No Telepon</th>
                                         <th>Alamat Email</th>
                                         <th> </th>
+                                        <th> </th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -40,7 +41,10 @@
                                             <td><?= $kar->nama_belakang; ?></td>
                                             <td><?= $kar->no_telepon; ?></td>
                                             <td><?= $kar->email; ?></td>
-                                            <td><a href="<?= site_url('Admin/Karyawan/editKaryawan/' . $kar->id_karyawan); ?>"><button type="button" class="btn btn-warning">Ubah</button></a> <a href="<?= site_url('Admin/Karyawan/hapusKaryawan/' . $kar->id_karyawan); ?>"><button type="button" class="btn btn-danger">Hapus</button></a> <a href="<?= site_url('Admin/Karyawan/jadwalKaryawan/' . $kar->id_karyawan); ?>"><button type="button" class="btn btn-success">Atur Jadwal</button></a></td>
+                                            <td>
+                                                <img src="<?php echo base_url(); ?>assets/img/karyawan/<?php echo $kar->gambar_karyawan; ?>" alt="" width="250" height="180">
+                                            </td>
+                                            <td><a href="<?= site_url('Admin/Karyawan/editKaryawan/' . $kar->id_karyawan); ?>"><button type="button" class="btn btn-warning">Ubah</button></a> <a href="<?= site_url('Admin/Karyawan/hapusKaryawan/' . $kar->id_karyawan); ?>"><button type="button" class="btn btn-danger">Hapus</button></a></td>
                                             </td>
                                         </tr>
                                     <?php } ?>

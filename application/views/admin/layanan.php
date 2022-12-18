@@ -28,8 +28,10 @@
                                         <th>Kategori Layanan</th>
                                         <th>Deskripsi</th>
                                         <th>Biaya</th>
-                                        <th>Rata-rata Durasi</th>
-                                        <th></th>
+                                        <th>Rata-rata Durasi Layanan</th>
+                                        <th> </th>
+                                        <th> </th>
+                                        <th> </th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -40,8 +42,11 @@
                                             <td><?= $l->nama_layanan; ?></td>
                                             <td><?= $l->nama_kategori; ?></td>
                                             <td><?= $l->deskripsi_layanan; ?></td>
-                                            <td><?= $l->biaya_layanan; ?></td>
-                                            <td><?= $l->durasi_layanan; ?></td>
+                                            <td>Rp.<?= $l->biaya_layanan; ?></td>
+                                            <td><?= $l->durasi_layanan; ?> Menit</td>
+                                            <td>
+                                                <img src="<?php echo base_url(); ?>assets/img/layanan/<?php echo $l->gambar_layanan; ?>" alt="" width="250" height="180">
+                                            </td>
                                             <td><a href="<?= site_url('Admin/Layanan/editLayanan/' . $l->id_layanan); ?>"><button type="button" class="btn btn-warning">Ubah</button></a><br>
                                                 <br><a href="<?= site_url('Admin/Layanan/hapusLayanan/' . $l->id_layanan); ?>"><button type="button" class="btn btn-danger">Hapus</button></a>
                                             </td>

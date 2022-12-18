@@ -16,6 +16,7 @@ class Layanan extends CI_Controller
     {
         $data['judul'] = 'Data Layanan';
         $data['layanan'] = $this->LayananModel->join_layanan();
+        // $data['layanan2'] = $this->db->get('layanan')->result_array();
         $data['admin'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
         $this->load->view('admin/templates/header', $data);
         $this->load->view('admin/templates/sidebar', $data);
@@ -40,18 +41,35 @@ class Layanan extends CI_Controller
             $this->load->view('admin/tambah_layanan', $data);
             $this->load->view('admin/templates/footer');
         } else {
-            $NamaLayanan = $this->input->post('nama_layanan');
-            $Deskripsi = $this->input->post('deskripsi_layanan');
-            $Kategori = $this->input->post('id_kategori');
-            $Biaya = $this->input->post('biaya_layanan');
-            $Durasi = $this->input->post('durasi_layanan');
+            $nama_layanan = $this->input->post('nama_layanan');
+            $deskripsi_layanan = $this->input->post('deskripsi_layanan');
+            $biaya_layanan = $this->input->post('biaya_layanan');
+            $durasi_layanan = $this->input->post('durasi_layanan');
+            $id_kategori = $this->input->post('id_kategori');
+
+            $gambar_layanan = $_FILES['gambar_layanan'];
+            if ($gambar_layanan = '') {
+            } else {
+                $config['upload_path'] = './assets/img/layanan';
+                $config['allowed_types'] = 'jpg|png|gif';
+
+                $this->load->library('upload', $config);
+
+                if (!$this->upload->do_upload('gambar_layanan')) {
+                    echo "Upload Gagal";
+                    die();
+                } else {
+                    $gambar_layanan = $this->upload->data('file_name');
+                }
+            }
 
             $data = array(
-                'nama_layanan' => $NamaLayanan,
-                'deskripsi_layanan' => $Deskripsi,
-                'biaya_layanan' => $Biaya,
-                'durasi_layanan' => $Durasi,
-                'id_kategori' => $Kategori
+                'nama_layanan' => $nama_layanan,
+                'deskripsi_layanan' => $deskripsi_layanan,
+                'biaya_layanan' => $biaya_layanan,
+                'durasi_layanan' => $durasi_layanan,
+                'id_kategori' => $id_kategori,
+                'gambar_layanan' => $gambar_layanan
             );
             $this->LayananModel->simpan_layanan($data);
             $this->session->set_flashdata('data', '<div class="alert alert-success alert-dismissible"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>Data Berhasil Ditambahkan!!</div>');
@@ -66,6 +84,7 @@ class Layanan extends CI_Controller
         $data['kategori'] = $this->KategoriModel->ambil();
         $data['layanan'] = $this->LayananModel->edit_layanan($where, 'layanan')->result();
         $data['admin'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+
         $this->load->view('admin/templates/header', $data);
         $this->load->view('admin/templates/sidebar', $data);
         $this->load->view('admin/ubah_layanan', $data);
@@ -74,6 +93,7 @@ class Layanan extends CI_Controller
 
     function ubahLayanan()
     {
+        $data['layanan'] = $this->LayananModel->tampilkan_layanan();
         $id_layanan = $this->input->post('id_layanan');
         $nama_layanan = $this->input->post('nama_layanan');
         $deskripsi_layanan = $this->input->post('deskripsi_layanan');
@@ -81,20 +101,36 @@ class Layanan extends CI_Controller
         $durasi_layanan = $this->input->post('durasi_layanan');
         $id_kategori = $this->input->post('id_kategori');
 
-        $data = array(
-            'nama_layanan' => $nama_layanan,
-            'deskripsi_layanan' => $deskripsi_layanan,
-            'biaya_layanan' => $biaya_layanan,
-            'durasi_layanan' => $durasi_layanan,
-            'id_kategori' => $id_kategori
-        );
+        $upload_image = $_FILES['gambar_layanan'];
 
-        $where = array(
-            'id_layanan' => $id_layanan
-        );
+        if ($upload_image) {
+            $config['allowed_types'] = 'gif|jpg|png';
+            $config['upload_path'] = './assets/img/layanan/';
 
-        $this->LayananModel->ubah_layanan($where, $data, 'layanan');
-        redirect('Admin/Layanan');
+            $this->load->library('upload', $config);
+
+            if (!$this->upload->do_upload('gambar_layanan')) {
+                echo 'gambar belum diupload';
+            } else {
+                $file = $this->upload->data();
+                $gambar = $file['file_name'];
+                $data = array(
+                    'nama_layanan' => $nama_layanan,
+                    'deskripsi_layanan' => $deskripsi_layanan,
+                    'biaya_layanan' => $biaya_layanan,
+                    'durasi_layanan' => $durasi_layanan,
+                    'id_kategori' => $id_kategori,
+                    'gambar_layanan' => $gambar
+                );
+
+                $where = array(
+                    'id_layanan' => $id_layanan
+                );
+
+                $this->LayananModel->ubah_layanan($where, $data, 'layanan');
+                redirect('Admin/Layanan');
+            }
+        }
     }
 
     function hapusLayanan()
