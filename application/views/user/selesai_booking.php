@@ -41,10 +41,17 @@
                                                 <td><?= $jb3->durasi_layanan; ?> menit</td>
                                                 <td>Rp.<?= $jb3->biaya_layanan; ?></td>
                                             </tr>
+
                                         <?php } ?>
                                     </tbody>
                                     </tbody>
                                 </table>
+                                <br>
+                                <center>
+                                    <p>Terimakasih sudah memilih layanan kami :D</p>
+                                    <p>Jangan lupa datang tepat waktu!</p>
+                                </center>
+                                <br>
                             </div>
                         </div>
                     </div>
